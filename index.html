@@ -2,6 +2,8 @@
 <html lang="en">
 
 	<head>
+        <!--CSS Style Sheet-->
+        <link rel="stylesheet" href="style.css">
 
 		<!--Tab Title-->
 		<meta charset="utf-8">
@@ -16,16 +18,14 @@
 
 	</head>
 
-	<body style="background-color:#c8c8c8;">
+	<body>
 
 		<!--Title Section-->
-		<div style="background-color:#545454; height:250px; margin:0 auto; width:800px;
-		margin-bottom:40px; margin-top:80px; background-size:cover; text-align:center;">
-			<h1 style="font-size:50px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="title-section">
+			<h1>
 				<strong>My Projects</strong>
 			</h1>
-			<p style="font-size:20px; margin-top:10px; margin-bottom:0px; margin-left:20px; margin-right:20px;">
+			<p id="title-section-description">
 				This is my website. It is meant to be a central place to showcase all of my games, 
 				since I am rapidly running out of room in my bio and such. Of course, this is not 
 				every project I have ever created (excluding deleted projects, I have 82 projects 
@@ -34,59 +34,49 @@
 		</div>
 
 		<!--First Section - New Projects-->
-		<div style="background-color:#8e8e8e; height:500px; margin:0 auto; width:800px;
-		margin-bottom:40px; text-align:center;">
-			<h1 style="font-size:40px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="first-section">
+			<h2>
 				<strong>New Projects</strong>
-			</h1>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:left; margin-top:17px; 
-			margin-bottom:17px; margin-left:24px; margin-right:16px; text-align:center;">
+			</h2>
+			<div class="project-box-left">
 				<a href="https://replit.com/@jikjikoplu/The-Random-Trivia-Game?v=1">
 					<img src="the-random-trivia-game.png" alt="The Random Trivia Game Cover Image"
-                    style="width:300px; height:165px;
-					margin:0px; margin-top:20px; margin-bottom:0px;">
+                    class="project-image">
 				</a>
-				<p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+				<p class="project-description">
 					The Random Trivia Game is my first game with a leaderboard, and my first game
                     that stores data on a text file. Includes 30 questions of random trivia I found
                     online. Play until you get one wrong, at which point the game is over. If you're
                     good enough, this is when you're added to the leaderboard.
 				</p>
-				<div style="background-color:#ff0000; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-java">
+					<p class="label-text">
 						<strong>Java</strong>
 					</p>
 				</div>
-				<div style="background-color:#f200ff; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:15px; margin-top:5px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div id="label-most-recent">
+					<p class="label-text">
 						<strong>Most Recent</strong>
 					</p>
 				</div>
 			</div>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:right; margin-top:17px; 
-			margin-bottom:17px; margin-left:16px; margin-right:24px; text-align:center;">
+			<div class="project-box-right">
 				<a href="https://replit.com/@jikjikoplu/MapGen-4?v=1">
-					<img src="mapgen-4.png" alt="MapGen 4 Cover Image"
-					style="width:300px; height:165px; margin:0px; margin-top:20px; margin-bottom:0px;">
+					<img src="mapgen-4.png" alt="MapGen 4 Cover Image" class="project-image">
 				</a>
-				<p style="font-size:19px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+				<p class="project-description">
 					MapGen 4 is my latest and most advanced map-generation project, and the successor to
                     MapGen 3 and Karel the Cartographer v1.7. It has customizable sizes and colors, and
                     generates land, sand, rock, and water of varrying depths. It uses Python Turtle for
                     its graphics.
 				</p>
-				<div style="background-color:#0000ff; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-python">
+					<p class="label-text">
 						<strong>Python</strong>
 					</p>
 				</div>
-				<div style="background-color:#fe2c54; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-images">
+					<p class="label-text">
 						<strong>Images</strong>
 					</p>
 				</div>
@@ -94,110 +84,94 @@
 		</div>
 
 		<!--Second Section - Projects-->
-		<div style="background-color:#8e8e8e; height:1025px; margin:0 auto; width:800px;
-		margin-bottom:40px; text-align:center;">
-			<h1 style="font-size:40px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="second-section">
+			<h2>
 				<strong>Projects</strong>
-			</h1>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:left; margin-top:17px; 
-			margin-bottom:17px; margin-left:24px; margin-right:16px; text-align:center;">
+			</h2>
+			<div class="project-box-left">
 				<a href="https://replit.com/@jikjikoplu2/Exorcist?v=1">
-					<img src="exorcist.png" alt="Exorcist Cover Image" style="width:300px; height:165px;
-					margin:0px; margin-top:20px; margin-bottom:0px;">
+					<img src="exorcist.png" alt="Exorcist Cover Image" class="project-image">
 				</a>
-				<p style="font-size:19px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+				<p class="project-description">
 					Exorcist is a text-based adventure game that follows your character through a strange
 					building filled with stranger creatures. Fight to survive, escape the building, and
 					attain a perfect score. No controls are used, you answer questions to choose the course
 					of your adventure.
 				</p>
-				<div style="background-color:#ff0000; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-java">
+					<p class="label-text">
 						<strong>Java</strong>
 					</p>
 				</div>
-				<div style="background-color:#800000; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:14px; margin-top:0px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
-						<strong>First Java Project</strong>
+				<div id="label-worst-cover">
+					<p class="label-text">
+						<strong>Worst Cover</strong>
 					</p>
 				</div>
 			</div>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:right; margin-top:17px; 
-			margin-bottom:17px; margin-left:16px; margin-right:24px; text-align:center;">
+			<div class="project-box-right">
 				<a href="https://replit.com/@jikjikoplu2/The-Devil-in-Me?v=1">
-					<img src="the-devil-in-me.png" alt="The Devil in Me Cover Image" style="width:240px; height:170px;
-					margin:0px; margin-top:20px;">
+					<img src="the-devil-in-me.png" alt="The Devil in Me Cover Image" id="project-image-tdim">
 				</a>
-				<p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+				<p class="project-description">
 					The Devil in Me is an image-based game where you can kill enemies, switch modes, and heal,
 					all for the goal of achieving the highscore (which is unfortunately not listed in-game).
 					This game uses the arrow keys to move, click to shoot, W to heal, and S to use your special.
 				</p>
-				<div style="background-color:#ffff00; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:15px; margin-top:5px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-javascript">
+					<p class="label-text">
 						<strong>JavaScript</strong>
 					</p>
 				</div>
-				<div style="background-color:#fe2c54; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-images">
+					<p class="label-text">
 						<strong>Images</strong>
 					</p>
 				</div>
 			</div>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:left; margin-top:17px; 
-			margin-bottom:17px; margin-left:24px; margin-right:16px; text-align:center;">
+			<div class="project-box-left">
 				<a href="https://replit.com/@jikjikoplu2/Kingdom-of-War-v12?v=1">
-					<img src="kingdom-of-war.png" alt="Kingdom of War Cover Image" style="width:300px; height:165px;
-					margin:0px; margin-top:20px; margin-bottom:0px;">
+					<img src="kingdom-of-war.png" alt="Kingdom of War Cover Image" class="project-image">
 				</a>
-				<p style="font-size:22px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
-					Kingdom of War was the first game I released publicly, and still remains one of my
+				<p class="project-description">
+					Kingdom of War (KoW) was the first game I released publicly, and still remains one of my
 					favorites. It is a text-based strategy game where you battle a bot I of my own creation.
 				</p>
-				<div style="background-color:#0000ff; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-python">
+					<p class="label-text">
 						<strong>Python</strong>
 					</p>
 				</div>
-				<div style="background-color:#b5b5b5; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:12px; margin-top:0px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
-						<strong>Kingdom of War Series</strong>
+				<div class="label-kow-series">
+					<p class="label-text">
+						<strong>KoW Series</strong>
 					</p>
 				</div>
 			</div>
-			<div style="background-color:#48aa69; height:400px; width:360px; float:right; margin-top:17px; 
-			margin-bottom:17px; margin-left:16px; margin-right:24px; text-align:center;">
+			<div class="project-box-right">
 				<a href="https://replit.com/@jikjikoplu2/Kingdom-of-War-Multiplayer-v11?v=1">
 					<img src="kingdom-of-war-multiplayer.png" alt="Kingdom of War - Multiplayer Cover Image"
-					style="width:300px; height:165px; margin:0px; margin-top:20px; margin-bottom:0px;">
+                    class="project-image">
 				</a>
-				<p style="font-size:19px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+				<p class="project-description">
 					Kingdom of War - Multiplayer is very similar to the original Kingdom of War, with a few major
 					differences. First, it is, as the name suggests, (local) multiplayer. It also doesn't have
 					an option to play a bot, and uses a different map.
 				</p>
-				<div style="background-color:#0000ff; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-python">
+					<p class="label-text">
 						<strong>Python</strong>
 					</p>
 				</div>
-				<div style="background-color:#b5b5b5; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:12px; margin-top:0px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
-						<strong>Kingdom of War Series</strong>
+				<div class="label-kow-series">
+					<p class="label-text">
+						<strong>KoW Series</strong>
 					</p>
 				</div>
 			</div>
-			<p style="font-size:18px; margin-left:0px; margin:50px; margin-right:50px;">
-				<em>Most of my projects can be found on replit at this <a href="https://replit.com/@jikjikoplu2">link</a>. 
+			<p id="projects-footer">
+				<em>Most of my projects can be found on replit at this
+                <a href="https://replit.com/@jikjikoplu2">link</a>. 
 				Most of my feautured projects are found on the slideshow on that page.
 				Also note that (excluding the Discord Bots section) all images are links
 				to the project they showcase.</em>
@@ -205,52 +179,40 @@
 		</div>
 
 		<!--Third Section - Discord Bots-->
-		<div style="background-color:#8e8e8e; height:350px; margin:0 auto; width:800px;
-		margin-bottom:40px; text-align:center;">
-			<h1 style="font-size:40px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="third-section">
+			<h2>
 				<strong>Discord Bots</strong>
-			</h1>
-			<div style="background-color:#48aa69; height:250px; width:360px; float:left; margin-top:17px; 
-			margin-bottom:17px; margin-left:24px; margin-right:16px; text-align:center;">
-				<img src="limebot.png" alt="LimeBot Cover Image"
-				style="width:95px; height:95px; margin:0px; margin-top:10px; margin-bottom:0px;
-				border-radius:95px; border:5px solid #712e62;">
-				<p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+			</h2>
+			<div class="discord-bot-box-left">
+				<img src="limebot.png" alt="LimeBot Cover Image" class="discord-bot-image">
+				<p class="project-description">
 					LimeBot is my first bot, and is in many ways a test. LimeBot is now operational again,
 					but has lost a lot of functionality.
 				</p>
-				<div style="background-color:#0000ff; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-python">
+					<p class="label-text">
 						<strong>Python</strong>
 					</p>
 				</div>
-				<div style="background-color:#800080; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:15px; margin-top:5px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-discord">
+					<p class="label-text">
 						<strong>Discord Bot</strong>
 					</p>
 				</div>
 			</div>
-			<div style="background-color:#48aa69; height:250px; width:360px; float:right; margin-top:17px; 
-			margin-bottom:17px; margin-left:16px; margin-right:24px; text-align:center;">
-				<img src="farmbot.png" alt="FarmBot Cover Image"
-				style="width:95px; height:95px; margin:0px; margin-top:10px; margin-bottom:0px;
-				border-radius:95px; border:5px solid #712e62;">
-				<p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
-					FarmBot is my more advanced bot, with many different features such as user accounts, a
-					currency system, and more.
+			<div class="discord-bot-box-right">
+				<img src="farmbot.png" alt="FarmBot Cover Image" class="discord-bot-image">
+				<p class="project-description">
+					FarmBot is my more advanced bot, with many different features
+                    such as user accounts, a currency system, and more.
 				</p>
-				<div style="background-color:#0000ff; height:30px; width:100px; float:left; margin-top:6px; 
-				margin-bottom:0px; margin-left:70px; margin-right:10px; text-align:center;">
-					<p style="font-size:20px; margin-top:3px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-python">
+					<p class="label-text">
 						<strong>Python</strong>
 					</p>
 				</div>
-				<div style="background-color:#800080; height:30px; width:100px; float:right; margin-top:6px; 
-				margin-bottom:0px; margin-left:10px; margin-right:70px; text-align:center;">
-					<p style="font-size:15px; margin-top:5px; margin-bottom:0px;margin-left:0px; margin-right:0px;">
+				<div class="label-discord">
+					<p class="label-text">
 						<strong>Discord Bot</strong>
 					</p>
 				</div>
@@ -258,42 +220,37 @@
 		</div>
 
 		<!--Fourth Section - Planned Projects-->
-		<div style="background-color:#8e8e8e; height:300px; margin:0 auto; width:800px;
-		margin-bottom:40px; text-align:center;">
-			<h1 style="font-size:40px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="fourth-section">
+			<h2>
 				<strong>Planned Projects</strong>
-			</h1>
-			<div style="background-color:#48aa69; height:200px; width:360px; float:left; margin-top:17px; 
-			margin-bottom:17px; margin-left:24px; margin-right:16px; text-align:center;">
-                <p style="font-size:20px; margin-top:5px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
+			</h2>
+			<div class="planned-box-left">
+                <h3>
                     <strong>Kingdom of War - Global Conquest</strong>
-                </p>
-                <p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+                </h3>
+                <p class="project-description">
                     This would be the final, most advanced Kingdom of War game, planned to include mulitiplayer
                     with options to have a bot player, a much larger map, a better money system, morale levels,
                     and nuclear weapons.
                 </p>
 			</div>
-			<div style="background-color:#48aa69; height:200px; width:360px; float:right; margin-top:17px; 
-			margin-bottom:17px; margin-left:16px; margin-right:24px; text-align:center;">
-                <p style="font-size:20px; margin-top:5px; margin-bottom:0px; margin-left:0px; margin-right:0px;">
-                    <strong>A Website??? A Database?</strong>
-                </p>
-                <p style="font-size:18px; margin-top:0px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
-                    I may make another website. Or maybe I'll make a database (which wouldn't be very interesting to you).
+			<div class="planned-box-right">
+                <h3>
+                    <strong>Website Update</strong>
+                </h3>
+                <p class="project-description">
+                    I will be updating and improving this website,
+                    though the improvement will be uninteresting to you.
                 </p>
 			</div>
 		</div>
 
 		<!--Fifth Section - About this page-->
-		<div style="background-color:#545454; height:200px; margin:0 auto; width:800px;
-		margin-bottom:40px; text-align:center;">
-			<h1 style="font-size:40px; margin:0px; padding-top:20px; padding-bottom:0px;
-			padding-left:0px; padding-right:0px;">
+		<div id="fifth-section">
+			<h2>
 				<strong>About this page</strong>
-			</h1>
-			<p style="font-size:20px; margin-top:10px; margin-bottom:0px; margin-left:10px; margin-right:10px;">
+			</h2>
+			<p id="fifth-section-description">
 				As mentioned above, this website is intended to be a place for my to share my projects in one place.
 				This website was made using Github Pages. All code was written by me, but I do not legally own
 				the domain name (aka the url aka the link you recieved to get here), as far as I know. Here
