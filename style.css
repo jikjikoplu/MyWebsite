@@ -1,0 +1,384 @@
+/* Global Elements */
+body {
+    background:#c8c8c8;
+}
+h1 {
+    font-size:50px;
+    
+    margin:0px;
+    padding-top:20px;
+    padding-bottom:0px;
+	padding-left:0px;
+    padding-right:0px;
+}
+h2 {
+    font-size:40px;
+    
+    margin:0px;
+    padding-top:20px;
+    padding-bottom:0px;
+	padding-left:0px;
+    padding-right:0px;
+}
+h3 {
+    font-size:20px;
+    
+    margin-top:5px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+
+/* Classes */
+.project-box-left {
+    background-color:#48aa69;
+    
+    height:400px;
+    width:360px;
+    
+    float:left;
+    
+    margin-top:17px; 
+	margin-bottom:17px;
+    margin-left:24px;
+    margin-right:16px;
+    
+    text-align:center;
+}
+.project-box-right {
+    background-color:#48aa69;
+    
+    height:400px;
+    width:360px;
+    
+    float:right;
+    
+    margin-top:17px; 
+	margin-bottom:17px;
+    margin-left:16px;
+    margin-right:24px;
+    
+    text-align:center;
+}
+.project-description {
+    font-size:1.45vw;
+
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-left:10px;
+    margin-right:10px;
+}
+.project-image {
+    width:300px;
+    height:165px;
+    
+    margin:0px;
+    margin-top:20px;
+    margin-bottom:0px;
+}
+
+.planned-box-left {
+    background-color:#48aa69;
+    
+    height:200px;
+    width:360px;
+    
+    float:left;
+    
+    margin-top:17px; 
+	margin-bottom:17px;
+    margin-left:24px;
+    margin-right:16px;
+    
+    text-align:center;
+}
+.planned-box-right {
+    background-color:#48aa69;
+    
+    height:200px;
+    width:360px;
+    
+    float:right;
+    
+    margin-top:17px; 
+	margin-bottom:17px;
+    margin-left:16px;
+    margin-right:24px;
+    
+    text-align:center;
+}
+
+.label-java {
+    background-color:#ff0000;
+    
+    height:30px;
+    width:100px;
+    
+    float:left;
+    
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:70px;
+    margin-right:10px;
+    
+    text-align:center;
+}
+.label-python {
+    background-color:#0000ff;
+    
+    height:30px;
+    width:100px;
+    
+    float:left;
+
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:70px;
+    margin-right:10px;
+    
+    text-align:center;
+}
+.label-javascript {
+    background-color:#ffff00;
+    
+    height:30px;
+    width:100px;
+    
+    float:left;
+
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:70px;
+    margin-right:10px;
+    
+    text-align:center;
+}
+.label-images {
+    background-color:#fe2c54;
+    
+    height:30px;
+    width:100px;
+    
+    float:right;
+
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:10px;
+    margin-right:70px;
+    
+    text-align:center;
+}
+.label-kow-series {
+    background-color:#b5b5b5;
+    
+    height:30px;
+    width:100px;
+    
+    float:right;
+
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:10px;
+    margin-right:70px;
+    
+    text-align:center;
+}
+.label-discord {
+    background-color:#800080;
+    
+    height:30px;
+    width:100px;
+    
+    float:right;
+
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:10px;
+    margin-right:70px;
+    
+    text-align:center;
+}
+.label-text {
+    font-size:1.3vw;
+    
+    margin-top:5px;
+    margin-bottom:0px;
+    margin-left:0px;
+    margin-right:0px;
+}
+
+.discord-bot-box-left {
+    background-color:#48aa69;
+    
+    height:250px;
+    width:360px;
+    
+    float:left;
+    
+    margin-top:17px;
+	margin-bottom:17px;
+    margin-left:24px;
+    margin-right:16px;
+    
+    text-align:center;
+}
+.discord-bot-box-right {
+    background-color:#48aa69;
+    
+    height:250px;
+    width:360px;
+    
+    float:right;
+    
+    margin-top:17px;
+	margin-bottom:17px;
+    margin-left:16px;
+    margin-right:24px;
+    
+    text-align:center;
+}
+.discord-bot-image {
+    width:95px;
+    height:95px;
+    
+    margin:0px;
+    margin-top:10px;
+    margin-bottom:0px;
+    border-radius:95px;
+    border:5px solid #712e62;
+}
+
+/* IDs */
+#title-section {
+    background-size:cover;
+    background-color:#545454;
+    
+    height:250px;
+    width:800px;
+
+    margin:0 auto;
+    margin-top:80px;
+	margin-bottom:40px;
+    
+    
+    text-align:center;
+}
+#title-section-description {
+    font-size:20px;
+    
+    margin-top:10px;
+    margin-bottom:0px;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+#first-section {
+    background-color:#8e8e8e;
+    
+    height:500px;
+    width:800px;
+    
+    margin:0 auto;
+	margin-bottom:40px;
+    
+    text-align:center;
+}
+#projects-footer {
+    font-size:18px;
+    
+    margin:50px;
+}
+
+#second-section {
+    background-color:#8e8e8e;
+    
+    height:1025px;
+    width:800px;
+    
+    margin:0 auto;
+	margin-bottom:40px;
+    
+    text-align:center;
+}
+#project-image-tdim {
+    width:240px;
+    height:170px;
+	
+    margin:0px;
+    margin-top:20px;
+}
+
+#third-section {
+    background-color:#8e8e8e;
+    
+    height:350px;
+    width:800px;
+    
+    margin:0 auto; 
+    margin-bottom:40px;
+    
+    text-align:center;
+}
+
+#fourth-section {
+    background-color:#8e8e8e;
+    
+    height:300px;
+    width:800px;
+    
+    margin:0 auto;
+	margin-bottom:40px;
+    
+    text-align:center;
+}
+
+#fifth-section {
+    background-color:#545454;
+    
+    height:200px;
+    width:800px;
+    
+    margin:0 auto;
+	margin-bottom:40px;
+    
+    text-align:center;
+}
+#fifth-section-description {
+    font-size:20px;
+    
+    margin-top:10px;
+    margin-bottom:0px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+#label-worst-cover {
+    background-color:#800000;
+    
+    height:30px;
+    width:100px;
+    
+    float:right;
+    
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:10px;
+    margin-right:70px;
+    text-align:center;
+}
+#label-most-recent {
+    background-color:#f200ff;
+    
+    height:30px;
+    width:100px;
+    
+    float:right;
+    
+    margin-top:6px; 
+	margin-bottom:0px;
+    margin-left:10px;
+    margin-right:70px;
+    
+    text-align:center;
+}
