@@ -3,12 +3,12 @@
     /*Stat Variables*/
     --loc-python: 350px;
     --loc-java: 73.5px;
-    --loc-javascript: 42px;
-    --loc-html: 20px;
-    --loc-css: 31.5px;
+    --loc-javascript: 47.5px;
+    --loc-html: 21.3px;
+    --loc-css: 32.4px;
     --projects-python: 350px;
     --projects-java: 140px;
-    --projects-javascript: 70px;
+    --projects-javascript: 140px;
     --projects-html: 70px;
     --projects-css: 70px;
     /*Colors*/
@@ -347,7 +347,7 @@ h3 {
 #second-section {
     background-color: var(--div-light-grey);
     
-    height: 1025px;
+    height: 1450px;
     width: var(--section-width);
     
     margin: 0 auto;
@@ -571,6 +571,21 @@ h3 {
 }
 #label-most-recent {
     background-color: #f200ff;
+    
+    height: 30px;
+    width: 100px;
+    
+    float: right;
+    
+    margin-top: 6px; 
+	margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 70px;
+    
+    text-align: center;
+}
+#label-leaderboard {
+    background-color: #ff9100;
     
     height: 30px;
     width: 100px;
