@@ -307,7 +307,7 @@ h3 {
 .graph-box {
     background-color: #bfbfbf;
 
-    height: 300px;
+    height: 330px;
     width: 350px;
 
     display: inline-block;
@@ -318,6 +318,7 @@ h3 {
     font-size: 18px;
 
     margin: 0px;
+    margin-bottom: 10px;
 }
 .bar-name {
     font-size: 20px;
