@@ -3,12 +3,12 @@
     /*Stat Variables*/
     --loc-python: 350px;
     --loc-java: 73.5px;
-    --loc-javascript: 124.7px;
+    --loc-javascript: 138.8px;
     --loc-html: 22.5px;
     --loc-css: 32.4px;
     --projects-python: 350px;
     --projects-java: 140px;
-    --projects-javascript: 210px;
+    --projects-javascript: 280px;
     --projects-html: 70px;
     --projects-css: 70px;
     /*Colors*/
@@ -363,7 +363,7 @@ h3 {
 #second-section {
     background-color: var(--div-light-grey);
     
-    height: 1450px;
+    height: 1800px;
     width: var(--section-width);
     
     margin: 0 auto;
