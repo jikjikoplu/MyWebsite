@@ -1,0 +1,289 @@
+/* VARIABLES */
+:root {
+    /* Colors */
+    --grey1: #101010;
+    --grey2: #202020;
+    --grey3: #404040;
+    --grey4: #606060;
+    --green: #00b050;
+}
+
+
+/* GLOBAL ELEMENTS */
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--grey1);
+}
+a:link {
+    color: var(--green);
+}
+a:visited {
+    color: #00b03c;
+}
+a:hover {
+    color: #99ffbb;
+}
+a:active {
+    color: #99ffbb;
+
+}
+
+/* CLASSES */
+/* Titles and Subtitles */
+.section-title {
+    font-size: 30px;
+    margin: 10px;
+    color: var(--grey4);
+    font-weight: bold;
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+.subsection-title {
+    font-size: 50px;
+    padding: 10px;
+    padding-top: 40px;
+    margin: 0 auto;
+    color: var(--green);
+    font-weight: bold;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+.graph-title {
+    font-size: 35px;
+    margin: 10px;
+    color: var(--grey4);
+    font-weight: bold;
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+.graph-subtitle {
+    font-size: 25px;
+    margin: 10px;
+    color: var(--grey4);
+    font-weight: bold;
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+/* Sidebar Elements */
+.sidebar-logo {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+}
+.navigation-link {
+    font-size: 22px;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+/* Project Box */
+.project-box {
+    width: 360px;
+    height: 560px;
+    display: inline-block;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    margin: 10px;
+    background-color: var(--grey2);
+}
+.project-image {
+    width: 300px;
+    height: 165px;
+    margin: 20px;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: var(--grey1);
+}
+.project-image-dbot {
+    width: 165px;
+    height: 165px;
+    border-style: ridge;
+    border-width: 10px;
+    border-radius: 50%;
+    border-color: var(--grey1);
+    margin: 20px;
+}
+.project-scroll-box {
+    width: 360px;
+    height: 255px;
+    overflow: auto;
+}
+.project-description {
+    font-size: 20px;
+    margin: 15px;
+    color: var(--grey3);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+.project-alt-link {
+    font-size: 22px;
+    margin: 10px;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+.project-tag {
+    width: 155px;
+    height: 50px;
+    display: inline-block;
+    margin: 10px;
+    background-color: var(--grey3);
+}
+.project-tag-text {
+    font-size: 20px;
+    margin-top: 8px;
+    color: var(--green);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+/* Graph Box */
+.graph-box {
+    width: 400px;
+    margin: 10px;
+    background-color: var(--grey2);
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    display: inline-block;
+    vertical-align: top;
+}
+.graph-bar {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+.graph-bar-text {
+    font-size: 20px;
+    margin: 10px;
+    color: var(--grey1);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    white-space: nowrap;
+}
+.graph-bar-small {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+.graph-bar-text-small {
+    font-size: 18px;
+    margin: 10px;
+    color: var(--grey1);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    white-space: nowrap;
+}
+
+/* IDs */
+/* Title Section */
+#title-section {
+    height: 250px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey4);
+    background-color: var(--grey3);
+    text-align: center;
+}
+#title-section-links {
+    font-size: 15px;
+    padding-top: 5px;
+    margin: 0;
+    font-weight: bold;
+}
+#title-section-image {
+    width: 200px;
+    height: 111px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+#page-title {
+    font-size: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    margin: 0 auto;
+    color: var(--green);
+    font-weight: bold;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+#title-section-description-box {
+    width: 750px;
+    height: 125px;
+    margin: 0 auto;
+    overflow: auto;
+}
+#title-section-description {
+    font-size: 20px;
+    margin: 0px;
+}
+/* Footer Section */
+#footer-section {
+    height: 250px;
+    margin: 20px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    background-color: var(--grey2);
+}
+#footer-logo {
+    width: 240px;
+    height: 133px;
+    margin: 10px;
+}
+/* Description Section */
+#description-section {
+    width: 200px;
+    height: 1000px;
+    float: left;
+    position: sticky;
+    top: 0;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    background-color: var(--grey2);
+    text-align: center;
+}
+#more-info {
+    font-size: 18px;
+    padding: 5px;
+    color: var(--grey4);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+/* Navigation Section */
+#navigation-section {
+    width: 200px;
+    height: 1000px;
+    float: right;
+    position: sticky;
+    top: 0;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    background-color: var(--grey2);
+    text-align: center;
+}
+/* Body Section */
+#body-section {
+    width: calc(100vw - 520px);
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--grey1);
+    text-align: center;
+}
+/* Button */
+#button {
+    width: 120px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: transparent;
+    border-radius: 25px;
+    margin: 20px;
+    background-color: var(--grey4);
+}
+/* Special Image */
+#project-image-tdim {
+    width: 233px;
+    height: 165px;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: var(--grey1);
+    margin: 20px;
+}
