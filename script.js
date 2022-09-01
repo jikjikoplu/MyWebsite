@@ -9,7 +9,7 @@ var pythonBlue = "#0000e6",
 // Section 1
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [5732, 1201, 2484, 411, 312, 5, 2, 6, 2, 2],
+    valueList = [5754, 1201, 2487, 411, 312, 5, 2, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType,
     widthMax = 400, valueMax, totalLoc = 0, totalProjects = 13,
     runLength = valueList.length, graphBar, graphBarText;
@@ -21,13 +21,13 @@ var projectNameList = ["Kingdom of War v1.2", "Kingdom of War - Multiplayer",
                        "Battlefield Simulator", "30 Second Racing Game",
                        "The Devil in Me", "My Website"],
     projectLocList = [1845, 2561, 85, 794, 469, 876, 325, 167, 197, 1268, 94,
-                      694, 787],
+                      694, 790],
     projectColorList = ["py", "py", "py", "py", "py", "j", "j", "hc", "js",
                         "js", "js", "js", "hc"],
     maxProjectLoc = Math.max(...projectLocList), myProject;
 
 //Section Three
-var version = "2.1.1";
+var version = "2.2.1";
 
 // Section Four
 var showLinks = false,
@@ -40,6 +40,9 @@ var showLinks = false,
 for(var i = 0; i < runLength / 2; i++){
     totalLoc += valueList[i];
 }
+totalLoc = totalLoc.toString();
+totalLoc = totalLoc.charAt(0) + totalLoc.charAt(1) + " " +
+           totalLoc.charAt(2) + totalLoc.charAt(3) + totalLoc.charAt(4);
 document.getElementById("total-loc").innerHTML =
     "Total: " + totalLoc;
 document.getElementById("total-projects").innerHTML =
@@ -57,7 +60,6 @@ for(i = 0; i < runLength; i++){
     myName = nameList[myPos];
     valueList.splice(myPos, 1);
     nameList.splice(myPos, 1);
-    //alert(myPos + " / " + myValue + " / " + myName);
     switch(myName){
         case "Python":
             myColor = pythonBlue;
