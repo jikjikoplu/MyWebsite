@@ -8,11 +8,10 @@
     --green: #00b050;
 }
 
-
 /* GLOBAL ELEMENTS */
 body {
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     background-color: var(--grey1);
 }
 a:link {
@@ -180,18 +179,28 @@ a:active {
     background-color: var(--grey3);
     text-align: center;
 }
-#title-section-links {
-    font-size: 15px;
-    padding-top: 5px;
-    margin: 0;
-    font-weight: bold;
-}
 #title-section-image {
     width: 200px;
     height: 111px;
     position: absolute;
     top: 10px;
     left: 10px;
+}
+#title-section-version {
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    color: var(--grey1);
+    font-weight: bold;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+#title-section-links {
+    font-size: 15px;
+    padding-top: 5px;
+    margin: 0px;
+    font-weight: bold;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
 }
 #page-title {
     font-size: 60px;
@@ -232,7 +241,7 @@ a:active {
     height: 1000px;
     float: left;
     position: sticky;
-    top: 0;
+    top: 0px;
     border-style: inset;
     border-width: 10px;
     border-color: var(--grey3);
@@ -251,7 +260,7 @@ a:active {
     height: 1000px;
     float: right;
     position: sticky;
-    top: 0;
+    top: 0px;
     border-style: inset;
     border-width: 10px;
     border-color: var(--grey3);
