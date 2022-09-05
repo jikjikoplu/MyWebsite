@@ -6,53 +6,57 @@ var pythonBlue = "#0000e6",
     htmlOrange = "#e65c00",
     cssPurple = "#660066";
 
-// Section 1
+// Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [5754, 1201, 2487, 411, 312, 5, 2, 6, 2, 2],
-    myPos,myName, myValue, myColor, myPercent, myWidth, myType,
-    widthMax = 400, valueMax, totalLoc = 0, totalProjects = 13,
-    runLength = valueList.length, graphBar, graphBarText;
+    valueList = [5754, 2398, 2520, 529, 353, 5, 3, 6, 2, 2],
+    myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
+    widthMax = 400, totalValue, maxValue, totalLoc = 0, totalProjects,
+    runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
 
-// Section 2
-var projectNameList = ["Kingdom of War v1.2", "Kingdom of War - Multiplayer",
-                       "LimeBot", "FarmBot", "MapGen 4", "Exorcist",
-                       "The Random Trivia Game", "Pong", "Racing Game 2",
-                       "Battlefield Simulator", "30 Second Racing Game",
-                       "The Devil in Me", "My Website"],
-    projectLocList = [1845, 2561, 85, 794, 469, 876, 325, 167, 197, 1268, 94,
-                      694, 790],
-    projectColorList = ["py", "py", "py", "py", "py", "j", "j", "hc", "js",
-                        "js", "js", "js", "hc"],
-    maxProjectLoc = Math.max(...projectLocList), myProject;
+// Section Two and Three
+var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
+                       "Battlefield Sim", "30 Second Racing Game",
+                       "The Random Trivia Game", "MapGen 4", "Exorcist",
+                       "FarmBot", "The Devil in Me", "LimeBot",
+                       "Kingdom of War - Multiplayer", "Kingdom of War"],
+    projectLocList = [1197, 982, 167, 197, 1268, 94, 325, 469, 876, 794,
+                      694, 85, 2561, 1845],
+    projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
+                        "j", "py", "js", "py", "py", "py"],
+    maxProjectLoc = Math.max(...projectLocList), myProject, myBar;
 
-//Section Three
-var version = "2.2.1";
+//Section Four
+var version = "2.3.1";
 
-// Section Four
+// Section Five
 var showLinks = false,
     altLinkIDList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
                      "alt-link-basim", "alt-link-3srg", "alt-link-tdim"];
 
 
 // CODE
+totalProjects = projectNameList.length;
+
 // Section 1: Graphs 1 & 2 Widths
 for(var i = 0; i < runLength / 2; i++){
     totalLoc += valueList[i];
 }
 totalLoc = totalLoc.toString();
-totalLoc = totalLoc.charAt(0) + totalLoc.charAt(1) + " " +
+totalLocString = totalLoc.charAt(0) + totalLoc.charAt(1) + " " +
            totalLoc.charAt(2) + totalLoc.charAt(3) + totalLoc.charAt(4);
 document.getElementById("total-loc").innerHTML =
-    "Total: " + totalLoc;
+    "Total: " + totalLocString;
 document.getElementById("total-projects").innerHTML =
     "Total: " + totalProjects;
 for(i = 0; i < runLength; i++){
     if(i == 0){
-        valueMax = Math.max(...valueList);
+        totalValue = totalLoc;
+        maxValue = Math.max(...valueList);
         myType = " Lines of Code ";
     }else if(i == 5){
-        valueMax = Math.max(...valueList);
+        totalValue = totalProjects;
+        maxValue = Math.max(...valueList);
         myType = " Projects ";
     }
     myPos = valueList.indexOf(Math.max(...valueList));
@@ -77,8 +81,9 @@ for(i = 0; i < runLength; i++){
             myColor = cssPurple;
             break;
     }
-    myPercent = myValue / valueMax;
-    myWidth = myPercent * widthMax;
+    myPercent = myValue / totalValue;
+    myWidthPercent = myValue / maxValue;
+    myWidth = myWidthPercent * widthMax;
     document.getElementsByClassName("graph-bar")[i].style.width =
         myWidth + "px";
     document.getElementsByClassName("graph-bar")[i].style.backgroundColor =
@@ -88,10 +93,39 @@ for(i = 0; i < runLength; i++){
         "(" + Math.round(myPercent * 100) + "%)";
 }
 
-// Section 3: Website Version
-document.getElementById("title-section-version").innerHTML = version;
+// Section 2: Graph 4 Widths
+// Wrong order because project stat lists are deleted in Section 3
+for(i = 0; i < projectNameList.length; i++){
+    myProject = projectNameList[i];
+    myLoc = projectLocList[i];
+    myColor = projectColorList[i];
+    switch(myColor){
+        case "py":
+            myColor = pythonBlue;
+            break;
+        case "j":
+            myColor = javaRed;
+            break;
+        case "js":
+            myColor = javascriptYellow;
+            break;
+        case "hc":
+            myColor = htmlOrange;
+            break;
+    }
+    myPercent = myLoc / totalLoc;
+    myHeight = myPercent * 3000;
+    myBar = document.getElementsByClassName("graph-bar-wide")[i];
+    myBarText = document.getElementsByClassName("graph-bar-wide-text")[i];
+    myBarText.innerHTML =
+        myProject + " - " + (Math.round(myPercent * 1000) / 10) + "%";
+    myBar.style.height = (myHeight - 6) + "px";
+    myBar.style.backgroundColor = myColor;
+    document.getElementsByClassName("second-tag")[i].innerHTML =
+        myLoc + " LoC";
+}
 
-// Section 2: Graph 3 Widths
+// Section 3: Graph 3 Widths and Projects Tags
 for(i = 0; i < 10; i++){
     myPos = projectLocList.indexOf(Math.max(...projectLocList));
     myProject = projectNameList[myPos];
@@ -123,7 +157,10 @@ for(i = 0; i < 10; i++){
         style.backgroundColor = myColor;
 }
 
-// Section 4: Toggle Links Button
+// Section 4: Website Version
+document.getElementById("title-section-version").innerHTML = version;
+
+// Section 5: Toggle Links Button
 function toggleLinks(){
     if(! showLinks){
         showLinks = true;
