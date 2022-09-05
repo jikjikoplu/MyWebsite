@@ -70,7 +70,7 @@ a:active {
     font-size: 22px;
     font-family: "Georgia", "Times New Roman", "Times", "serif";
 }
-/* Project Box */
+/* Project */
 .project-box {
     width: 360px;
     height: 560px;
@@ -127,7 +127,32 @@ a:active {
     color: var(--green);
     font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
 }
-/* Graph Box */
+/* Planned Projects */
+.planned-project-box {
+    width: 400px;
+    height: 400px;
+    display: inline-block;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    margin: 10px;
+    background-color: var(--grey2);
+    overflow: auto;
+}
+.planned-project-title {
+    font-size: 25px;
+    margin: 15px;
+    color: var(--grey4);
+    font-weight: bold;
+    font-family: "Georgia", "Times New Roman", "Times", "serif";
+}
+.planned-project-description {
+    font-size: 20px;
+    margin: 15px;
+    color: var(--grey3);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+}
+/* Graph */
 .graph-box {
     width: 400px;
     margin: 10px;
@@ -164,6 +189,23 @@ a:active {
 .graph-bar-text-small {
     font-size: 18px;
     margin: 10px;
+    color: var(--grey1);
+    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    white-space: nowrap;
+}
+.graph-bar-wide {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-style: dashed;
+    border-width: 3px;
+    border-color: var(--grey1);
+    text-align: center;
+}
+.graph-bar-wide-text {
+    font-size: 15px;
+    margin: 5px;
     color: var(--grey1);
     font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
     white-space: nowrap;
