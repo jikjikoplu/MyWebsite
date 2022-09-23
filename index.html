@@ -32,7 +32,7 @@
                 <a href="https://github.com/jikjikoplu" target="_blank">Github Profile</a> | 
                 <a href="https://github.com/jikjikoplu/MyWebsite" target="_blank">Source Code</a>
             </p>
-            <p id="page-title">Welcome to My Website</p>
+            <p id="title-section-title">Welcome to My Website</p>
             <div id="title-section-description-box">
                 <p id="title-section-description">
                     This is my place to collectively showcase all of my projects, so that they are all in one
@@ -44,7 +44,7 @@
         </div>
 
         <!--Description Section-->
-        <div id="description-section">
+        <div class="sidebar" id="description-section">
             <img src="images/logo-square.png" alt="Square Logo" class="sidebar-logo">
             <!--Description-->
             <p class="section-title">More Info</p>
@@ -56,9 +56,9 @@
         </div>
 
         <!--Navigation Section-->
-        <div id="navigation-section">
+        <div class="sidebar" id="navigation-section">
             <img src="images/logo-square.png" alt="Square Logo" class="sidebar-logo">
-            <p class="section-title">Navigation</p>
+            <p class="section-title">Navi<wbr>gation</p>
             <a href="#title-section" class="navigation-link">Top of Page</a> <br> <br>
             <a href="#title-projects" class="navigation-link">Projects</a> <br> <br>
             <a href="#title-planned-projects" class="navigation-link">Planned Projects</a> <br> <br>
@@ -293,6 +293,8 @@
                         The link for this project does not have anything to
                         "play".
                     </p>
+                    <a href="https://pong.jikjikoplu.repl.co/" target="_blank"
+                        class="project-alt-link" id="alt-link-frmbot"></a>
                 </div>
                 <div class="project-tag">
                     <p class="project-tag-text">Python</p>
@@ -395,16 +397,6 @@
             <p id="title-planned-projects" class="subsection-title">Planned Projects</p>
 
             <div class="planned-project-box">
-                <p class="planned-project-title">Map Explorer</p>
-                <p class="planned-project-description">
-                    A text-based map explorer with different colors meaning
-                    different terrains, interactive areas, or objects.
-                    Originally, a simpler version was going to be part of
-                    FakeOS, but was later removed. Will likely be made in Java.
-                </p>
-            </div>
-
-            <div class="planned-project-box">
                 <p class="planned-project-title">SuperIpsum</p>
                 <p class="planned-project-description">
                     Ever felt your useless placeholder text wasn't <em>random</em>
@@ -425,7 +417,16 @@
                     or Java.
                 </p>
             </div>
-            
+
+            <div class="planned-project-box">
+                <p class="planned-project-title">FarmBot v2</p>
+                <p class="planned-project-description">
+                    A huge update to FarmBot to improve functionality, add new
+                    features, and more. Would also include a minor update to
+                    LimeBot.
+                </p>
+            </div>
+
 
             <!--Statistics-->
             <p id="title-statistics" class="subsection-title">Statistics</p>
@@ -434,20 +435,20 @@
             <div class="graph-box">
                 <p class="graph-title">Lines of Code</p>
                 <p id="total-loc" class="graph-subtitle"></p>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
             </div>
 
@@ -455,20 +456,20 @@
             <div class="graph-box">
                 <p class="graph-title">Projects</p>
                 <p id="total-projects" class="graph-subtitle"></p>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
-                <div class="graph-bar">
-                    <p class="graph-bar-text"></p>
+                <div class="graph-bar graph-bar-tall">
+                    <p class="graph-bar-text graph-bar-tall-text"></p>
                 </div>
             </div>
 
@@ -476,35 +477,35 @@
             <div class="graph-box">
                 <p class="graph-title">Largest Projects</p>
                 <p class="graph-subtitle">by Total Lines of Code</p>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
-                <div class="graph-bar-small">
-                    <p class="graph-bar-text-small"></p>
+                <div class="graph-bar graph-bar-small">
+                    <p class="graph-bar-text graph-bar-small-text"></p>
                 </div>
             </div>
 
@@ -512,53 +513,41 @@
             <div class="graph-box">
                 <p class="graph-title">All Projects</p>
                 <p class="graph-subtitle">by Total Lines of Code</p>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
-                </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
-                </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
-                </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
-                </div>
-                <div class="graph-bar-wide">
-                    <p class="graph-bar-wide-text"></p>
+                <div class="graph-bar graph-bar-wide">
+                    <p class="graph-bar-text graph-bar-wide-text"></p>
                 </div>
             </div>
 
             <!--Footer-->
             <div id="footer-section" class="section">
-                <p class="subsection-title">That's all for now!</p>
+                <p id="footer-title">That's all for now!</p>
                 <img src="images/logo-medium.png" alt="Logo" id="footer-logo">
             </div>
 
