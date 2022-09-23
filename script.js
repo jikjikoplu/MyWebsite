@@ -1,17 +1,17 @@
 // VARIABLES
 // Colors
-var pythonBlue = "#0000e6",
-    javaRed = "#cc0000",
-    javascriptYellow = "#ffff00",
-    htmlOrange = "#e65c00",
-    cssPurple = "#660066";
+var pythonBlue = "#2525ff",
+    javaRed = "#ff2525",
+    javascriptYellow = "#ffff25",
+    htmlOrange = "#ff9225",
+    cssPurple = "#922592";
 
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [5754, 2398, 2520, 529, 353, 5, 3, 6, 2, 2],
+    valueList = [5754, 2398, 2549, 517, 349, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
-    widthMax = 400, totalValue, maxValue, totalLoc = 0, totalProjects,
+    widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
 
 // Section Two and Three
@@ -20,28 +20,42 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1197, 982, 167, 197, 1268, 94, 325, 469, 876, 794,
+    projectLocList = [1197, 995, 167, 197, 1268, 94, 325, 469, 876, 794,
                       694, 85, 2561, 1845],
     projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
-    maxProjectLoc = Math.max(...projectLocList), myProject, myBar;
+    maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
+    bigPercent = 0, bigHeight = 0, c = 0,
+    totalProjects = projectNameList.length;
 
 //Section Four
-var version = "2.3.1";
+var version = "v2.4.1";
 
 // Section Five
 var showLinks = false,
     altLinkIDList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
-                     "alt-link-basim", "alt-link-3srg", "alt-link-tdim"];
+                     "alt-link-basim", "alt-link-3srg", "alt-link-frmbot",
+                     "alt-link-tdim"];
 
 
 // CODE
-totalProjects = projectNameList.length;
-
-// Section 1: Graphs 1 & 2 Widths
 for(var i = 0; i < runLength / 2; i++){
     totalLoc += valueList[i];
 }
+for(var i = 0; i < totalProjects; i++){
+    totalLoc2 += projectLocList[i];
+}
+if(totalLoc != totalLoc2){
+    alert(`Error: Total Lines of Code doesn't match.
+Lines of Code in Graph 1: ` + totalLoc + `
+Lines of Code in Graph 4: ` + totalLoc2 + `
+If you know me (the creator of this website),
+please contact me. Otherwise, go to either
+Replit or Github (see very top of page)
+if you have an account on either.`);
+}
+
+// Section 1: Graphs 1 & 2 Widths
 totalLoc = totalLoc.toString();
 totalLocString = totalLoc.charAt(0) + totalLoc.charAt(1) + " " +
            totalLoc.charAt(2) + totalLoc.charAt(3) + totalLoc.charAt(4);
@@ -84,18 +98,18 @@ for(i = 0; i < runLength; i++){
     myPercent = myValue / totalValue;
     myWidthPercent = myValue / maxValue;
     myWidth = myWidthPercent * widthMax;
-    document.getElementsByClassName("graph-bar")[i].style.width =
+    document.getElementsByClassName("graph-bar-tall")[i].style.width =
         myWidth + "px";
-    document.getElementsByClassName("graph-bar")[i].style.backgroundColor =
-        myColor;
-    document.getElementsByClassName("graph-bar-text")[i].innerHTML =
+    document.getElementsByClassName("graph-bar-tall")[i]
+        .style.backgroundColor = myColor;
+    document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML =
         myName + " - " + myValue + myType +
         "(" + Math.round(myPercent * 100) + "%)";
 }
 
-// Section 2: Graph 4 Widths
+// Section 2: Graph 4 Heights
 // Wrong order because project stat lists are deleted in Section 3
-for(i = 0; i < projectNameList.length; i++){
+for(i = 0; i < totalProjects; i++){
     myProject = projectNameList[i];
     myLoc = projectLocList[i];
     myColor = projectColorList[i];
@@ -114,16 +128,28 @@ for(i = 0; i < projectNameList.length; i++){
             break;
     }
     myPercent = myLoc / totalLoc;
-    myHeight = myPercent * 3000;
-    myBar = document.getElementsByClassName("graph-bar-wide")[i];
-    myBarText = document.getElementsByClassName("graph-bar-wide-text")[i];
-    myBarText.innerHTML =
-        myProject + " - " + (Math.round(myPercent * 1000) / 10) + "%";
-    myBar.style.height = (myHeight - 6) + "px";
-    myBar.style.backgroundColor = myColor;
+    myHeight = myPercent * 400;
+    if(myHeight >= 15){
+        myBar = document.getElementsByClassName("graph-bar-wide")[c];
+        myBarText = document.getElementsByClassName("graph-bar-wide-text")[c];
+        myBarText.innerHTML =
+            myProject + " - " + (Math.round(myPercent * 1000) / 10) + "%";
+        myBar.style.height = (myHeight - 2) + "px";
+        myBar.style.backgroundColor = myColor;
+        c++
+    }else{
+        bigPercent += myPercent;
+        bigHeight += myHeight;
+    }
     document.getElementsByClassName("second-tag")[i].innerHTML =
         myLoc + " LoC";
 }
+myBar = document.getElementsByClassName("graph-bar-wide")[c];
+myBarText = document.getElementsByClassName("graph-bar-wide-text")[c];
+myBarText.innerHTML =
+    "Other - " + (Math.round(bigPercent * 1000) / 10) + "%";
+myBar.style.height = (bigHeight - 2) + "px";
+myBar.style.backgroundColor = "#808080";
 
 // Section 3: Graph 3 Widths and Projects Tags
 for(i = 0; i < 10; i++){
@@ -149,12 +175,12 @@ for(i = 0; i < 10; i++){
     projectNameList.splice(myPos, 1);
     projectLocList.splice(myPos, 1);
     projectColorList.splice(myPos, 1);
-    document.getElementsByClassName("graph-bar-text-small")[i].innerHTML =
+    document.getElementsByClassName("graph-bar-small-text")[i].innerHTML =
         "" + (i+1) + ". " + myProject + " - " + myLoc;
     document.getElementsByClassName("graph-bar-small")[i].style.width =
         myWidth + "px";
-    document.getElementsByClassName("graph-bar-small")[i].
-        style.backgroundColor = myColor;
+    document.getElementsByClassName("graph-bar-small")[i]
+        .style.backgroundColor = myColor;
 }
 
 // Section 4: Website Version
@@ -166,12 +192,15 @@ function toggleLinks(){
         showLinks = true;
         document.getElementById("button").innerHTML = "Hide Alternate Links";
         for(i = 0; i < altLinkIDList.length; i++){
-            if(altLinkIDList[i] != "alt-link-rg2-2"){
-                document.getElementById(altLinkIDList[i]).innerHTML =
-                    "Website";
-            }else{
+            if(altLinkIDList[i] == "alt-link-rg2-2"){
                 document.getElementById(altLinkIDList[i]).innerHTML =
                     "Alternate Website";
+            }else if(altLinkIDList[i] == "alt-link-frmbot"){
+                document.getElementById(altLinkIDList[i]).innerHTML =
+                    "Add FarmBot to a Discord Server";
+            }else{
+                document.getElementById(altLinkIDList[i]).innerHTML =
+                    "Website";
             }
         }
     }else{
