@@ -6,6 +6,9 @@
     --grey3: #404040;
     --grey4: #606060;
     --green: #00b050;
+    /* Fonts */
+    --verdana: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    --georgia: "Georgia", "Times New Roman", "Times", "serif";
 }
 
 /* GLOBAL ELEMENTS */
@@ -35,7 +38,7 @@ a:active {
     margin: 10px;
     color: var(--grey4);
     font-weight: bold;
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 .subsection-title {
     font-size: 50px;
@@ -44,31 +47,41 @@ a:active {
     margin: 0 auto;
     color: var(--green);
     font-weight: bold;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
 .graph-title {
     font-size: 35px;
     margin: 10px;
     color: var(--grey4);
     font-weight: bold;
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 .graph-subtitle {
     font-size: 25px;
     margin: 10px;
     color: var(--grey4);
     font-weight: bold;
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 /* Sidebar Elements */
+.sidebar {
+    width: 16%;
+    height: calc(100vh - 20px);
+    position: sticky;
+    top: 0px;
+    border-style: inset;
+    border-width: 10px;
+    border-color: var(--grey3);
+    background-color: var(--grey2);
+    text-align: center;
+}
 .sidebar-logo {
-    width: 180px;
-    height: 180px;
-    margin: 10px;
+    width: 86%;
+    margin: 7%;
 }
 .navigation-link {
     font-size: 22px;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
 /* Project */
 .project-box {
@@ -107,12 +120,12 @@ a:active {
     font-size: 20px;
     margin: 15px;
     color: var(--grey3);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 .project-alt-link {
     font-size: 22px;
     margin: 10px;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
 .project-tag {
     width: 155px;
@@ -125,7 +138,7 @@ a:active {
     font-size: 20px;
     margin-top: 8px;
     color: var(--green);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 /* Planned Projects */
 .planned-project-box {
@@ -144,13 +157,13 @@ a:active {
     margin: 15px;
     color: var(--grey4);
     font-weight: bold;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
 .planned-project-description {
     font-size: 20px;
     margin: 15px;
     color: var(--grey3);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 /* Graph */
 .graph-box {
@@ -164,51 +177,42 @@ a:active {
     vertical-align: top;
 }
 .graph-bar {
-    height: 80px;
     display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    text-align: left;
 }
 .graph-bar-text {
-    font-size: 20px;
-    margin: 10px;
     color: var(--grey1);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-weight: bold;
+    font-family: var(--verdana);
     white-space: nowrap;
+}
+.graph-bar-tall {
+    height: 80px;
+}
+.graph-bar-tall-text {
+    font-size: 18px;
+    margin: 5px;
+    text-align: left;
 }
 .graph-bar-small {
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+}
+.graph-bar-small-text {
+    font-size: 16px;
+    margin: 5px;
     text-align: left;
 }
-.graph-bar-text-small {
-    font-size: 18px;
-    margin: 10px;
-    color: var(--grey1);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
-    white-space: nowrap;
-}
 .graph-bar-wide {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
     border-style: dashed;
-    border-width: 3px;
-    border-color: var(--grey1);
-    text-align: center;
+    border-width: 1px;
+    border-color: var(--grey3);
 }
 .graph-bar-wide-text {
     font-size: 15px;
-    margin: 5px;
-    color: var(--grey1);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
-    white-space: nowrap;
+    margin: 0px;
+    text-align: center;
 }
 
 /* IDs */
@@ -222,36 +226,34 @@ a:active {
     text-align: center;
 }
 #title-section-image {
-    width: 200px;
-    height: 111px;
+    width: 15%;
     position: absolute;
     top: 10px;
     left: 10px;
 }
 #title-section-version {
-    font-size: 20px;
+    font-size: 25px;
     position: absolute;
-    top: 15px;
-    right: 40px;
+    top: 0px;
+    right: 3%;
     color: var(--grey1);
     font-weight: bold;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--verdana);
 }
 #title-section-links {
     font-size: 15px;
     padding-top: 5px;
     margin: 0px;
     font-weight: bold;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
-#page-title {
-    font-size: 60px;
+#title-section-title {
+    font-size: 40px;
     padding: 20px;
-    padding-top: 0px;
     margin: 0 auto;
     color: var(--green);
     font-weight: bold;
-    font-family: "Georgia", "Times New Roman", "Times", "serif";
+    font-family: var(--georgia);
 }
 #title-section-description-box {
     width: 750px;
@@ -260,17 +262,30 @@ a:active {
     overflow: auto;
 }
 #title-section-description {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0px;
+    color: var(--green);
+    font-family: var(--verdana);
 }
 /* Footer Section */
 #footer-section {
+    width: 400px;
     height: 250px;
-    margin: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
     border-style: inset;
     border-width: 10px;
     border-color: var(--grey3);
     background-color: var(--grey2);
+}
+#footer-title {
+    font-size: 30px;
+    padding: 10px;
+    padding-top: 40px;
+    margin: 0 auto;
+    color: var(--green);
+    font-weight: bold;
+    font-family: var(--georgia);
 }
 #footer-logo {
     width: 240px;
@@ -279,39 +294,21 @@ a:active {
 }
 /* Description Section */
 #description-section {
-    width: 200px;
-    height: 1000px;
     float: left;
-    position: sticky;
-    top: 0px;
-    border-style: inset;
-    border-width: 10px;
-    border-color: var(--grey3);
-    background-color: var(--grey2);
-    text-align: center;
 }
 #more-info {
     font-size: 18px;
     padding: 5px;
     color: var(--grey4);
-    font-family: "Verdana", "Geneva", "Tahoma", "sans-serif";
+    font-family: var(--verdana);
 }
 /* Navigation Section */
 #navigation-section {
-    width: 200px;
-    height: 1000px;
     float: right;
-    position: sticky;
-    top: 0px;
-    border-style: inset;
-    border-width: 10px;
-    border-color: var(--grey3);
-    background-color: var(--grey2);
-    text-align: center;
 }
 /* Body Section */
 #body-section {
-    width: calc(100vw - 520px);
+    width: 68%;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--grey1);
