@@ -256,13 +256,13 @@ a:active {
     font-family: var(--georgia);
 }
 #title-section-description-box {
-    width: 750px;
+    width: 55%;
     height: 125px;
     margin: 0 auto;
     overflow: auto;
 }
 #title-section-description {
-    font-size: 18px;
+    font-size: 100%;
     margin: 0px;
     color: var(--green);
     font-family: var(--verdana);
@@ -316,15 +316,19 @@ a:active {
 }
 /* Button */
 #button {
-    width: 120px;
-    height: 60px;
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 10px;
     border: transparent;
     border-radius: 25px;
     margin: 20px;
     background-color: var(--grey4);
+}
+#button-text {
+    font-size: 120%;
+    color: var(--grey1);
+    font-weight: bold;
+    font-family: var(--verdana);
 }
 /* Special Image */
 #project-image-tdim {
