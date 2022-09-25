@@ -9,7 +9,7 @@ var pythonBlue = "#2525ff",
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [5754, 2398, 2551, 519, 353, 5, 3, 6, 2, 2],
+    valueList = [5754, 2384, 2550, 533, 353, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
@@ -20,7 +20,7 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1197, 1003, 167, 197, 1268, 94, 325, 469, 876, 794,
+    projectLocList = [1183, 1016, 167, 197, 1268, 94, 325, 469, 876, 794,
                       694, 85, 2561, 1845],
     projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
@@ -29,13 +29,12 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 //Section Four
-var version = "v2.5.0";
+var version = "v2.5.1";
 
 // Section Five
 var showLinks = false,
     altLinkIDList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
-                     "alt-link-basim", "alt-link-3srg", "alt-link-frmbot",
-                     "alt-link-tdim"];
+                     "alt-link-basim", "alt-link-3srg", "alt-link-tdim"];
 
 
 // CODE
