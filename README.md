@@ -1,6 +1,6 @@
 # MyWebsite
-All code is created and owned by me.
-All images and other files are owned by me.
+All code was created by me.
+All images and other files are mine.
 All images were created soley by me, with the
 exception of limebot.png, which is an edited
 (by me) version of an image from the
