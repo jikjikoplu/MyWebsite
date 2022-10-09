@@ -9,7 +9,7 @@ var pythonBlue = "#2525ff",
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [5754, 2384, 2550, 533, 353, 5, 3, 6, 2, 2],
+    valueList = [6293, 2482, 2550, 547, 353, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
@@ -20,8 +20,8 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1183, 1016, 167, 197, 1268, 94, 325, 469, 876, 794,
-                      694, 85, 2561, 1845],
+    projectLocList = [1281, 1030, 167, 197, 1268, 94, 325, 469, 876, 794,
+                      694, 624, 2561, 1845],
     projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
@@ -29,7 +29,7 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 //Section Four
-var version = "v2.5.1";
+var version = "v2.5.2";
 
 // Section Five
 var showLinks = false,
