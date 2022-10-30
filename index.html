@@ -82,6 +82,7 @@
                     <img src="images/fakeos.png" alt="FakeOS Cover Image" class="project-image">
                 </a>
                 <div class="project-scroll-box">
+                    <p class="project-version"></p>
                     <p class="project-description">
                         FakeOS, the best operating system on the market...
                         except it's not a real operating system...
@@ -104,6 +105,7 @@
                         class="project-image">
                 </a>
                 <div class="project-scroll-box">
+                    <p class="project-version"></p>
                     <p class="project-description">
                         My Website was actually started sometime after
                         I released Exorcist, but was completely redesigned more
@@ -335,6 +337,7 @@
             <div class="project-box">
                 <img src="images/limebot.png" alt="LimeBot Cover Image" class="project-image-dbot">
                 <div class="project-scroll-box">
+                    <p class="project-version"></p>
                     <p class="project-description">
                         LimeBot was my first discord bot. It recently had a big
                         update, and is no longer hosted on replit. It has many
@@ -356,6 +359,7 @@
                         class="project-image">
                 </a>
                 <div class="project-scroll-box">
+                    <p class="project-version"></p>
                     <p class="project-description">
                         Kingdom of War - Multiplayer is very similar to the
                         original Kingdom of War, with a few major differences.
@@ -378,6 +382,7 @@
                     <img src="images/kingdom-of-war.png" alt="Kingdom of War Cover Image" class="project-image">
                 </a>
                 <div class="project-scroll-box">
+                    <p class="project-version"></p>
                     <p class="project-description">
                         Kingdom of War was the first game I released
                         publicly, and still remains one of my favorites.
@@ -581,12 +586,19 @@
 
         </div>
 
-        <!--Button-->
-        <button id="button" onclick="toggleLinks()">
-            <p id="button-text">
-                Show Alternate Links
-            </p>
-        </button>
+        <!--Buttons-->
+        <div id="button-box">
+            <button class="button" id="button-left" onclick="toggleLinks()">
+                <p class="button-text">
+                    Toggle Alter<wbr>&shy;nate Links
+                </p>
+            </button>
+            <button class="button" id="button-right" onclick="toggleVersions()">
+                <p class="button-text">
+                    Toggle Ver<wbr>&shy;sions
+                </p>
+            </button>
+        </div>
 
         <script src="script.js"></script>
 
