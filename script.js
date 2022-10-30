@@ -4,12 +4,14 @@ var pythonBlue = "#2525ff",
     javaRed = "#ff2525",
     javascriptYellow = "#ffff25",
     htmlOrange = "#ff9225",
-    cssPurple = "#922592";
+    cssPurple = "#922592",
+    grey = "#606060",
+    green = "#00b050";
 
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [6293, 2482, 2550, 547, 353, 5, 3, 6, 2, 2],
+    valueList = [6323, 2482, 2569, 559, 374, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
@@ -20,8 +22,8 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1281, 1030, 167, 197, 1268, 94, 325, 469, 876, 794,
-                      694, 624, 2561, 1845],
+    projectLocList = [1281, 1082, 167, 197, 1268, 94, 325, 469, 876, 794,
+                      694, 654, 2561, 1845],
     projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
@@ -29,12 +31,16 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 //Section Four
-var version = "v2.5.2";
+var version = "v2.6.1";
 
 // Section Five
 var showLinks = false,
-    altLinkIDList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
+    altLinkIdList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
                      "alt-link-basim", "alt-link-3srg", "alt-link-tdim"];
+
+// Section 6
+var showVersions = false,
+    vTagList = ["v1.1", "v2.6.1", "v2.2", "v1.1", "v1.2"]
 
 
 // CODE
@@ -189,26 +195,43 @@ document.getElementById("title-section-version").innerHTML = version;
 function toggleLinks(){
     if(! showLinks){
         showLinks = true;
-        document.getElementById("button-text").innerHTML =
-            "Hide Alternate Links";
-        for(i = 0; i < altLinkIDList.length; i++){
-            if(altLinkIDList[i] == "alt-link-rg2-2"){
-                document.getElementById(altLinkIDList[i]).innerHTML =
+        document.getElementById("button-left").style.backgroundColor = green;
+        for(i = 0; i < altLinkIdList.length; i++){
+            if(altLinkIdList[i] == "alt-link-rg2-2"){
+                document.getElementById(altLinkIdList[i]).innerHTML =
                     "Alternate Website";
-            }else if(altLinkIDList[i] == "alt-link-frmbot"){
-                document.getElementById(altLinkIDList[i]).innerHTML =
+            }else if(altLinkIdList[i] == "alt-link-frmbot"){
+                document.getElementById(altLinkIdList[i]).innerHTML =
                     "Add FarmBot to a Discord Server";
             }else{
-                document.getElementById(altLinkIDList[i]).innerHTML =
+                document.getElementById(altLinkIdList[i]).innerHTML =
                     "Website";
             }
         }
     }else{
         showLinks = false;
-        document.getElementById("button-text").innerHTML =
-            "Show Alternate Links";
-        for(i = 0; i < altLinkIDList.length; i++){
-            document.getElementById(altLinkIDList[i]).innerHTML = "";
+        document.getElementById("button-left").style.backgroundColor = grey;
+        for(i = 0; i < altLinkIdList.length; i++){
+            document.getElementById(altLinkIdList[i]).innerHTML = "";
+        }
+    }
+}
+
+// Section 6: Toggle Versions Button
+function toggleVersions(){
+    if(! showVersions){
+        showVersions = true;
+        document.getElementById("button-right").style.backgroundColor = green;
+        for(i = 0; i < vTagList.length; i++){
+            document.getElementsByClassName("project-version")[i]
+                .innerHTML = vTagList[i];
+        }
+    }else{
+        showVersions = false;
+        document.getElementById("button-right").style.backgroundColor = grey;
+        for(i = 0; i < vTagList.length; i++){
+            document.getElementsByClassName("project-version")[i]
+                .innerHTML = "";
         }
     }
 }
