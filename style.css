@@ -80,8 +80,25 @@ a:active {
     margin: 7%;
 }
 .navigation-link {
-    font-size: 22px;
+    font-size: 20px;
     font-family: var(--georgia);
+}
+/* Buttons */
+.button {
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+    margin: 0px;
+    border: transparent;
+    border-radius: 25px;
+    background-color: var(--grey4);
+}
+.button-text {
+    font-size: 120%;
+    margin: 0px;
+    color: var(--grey1);
+    font-weight: bold;
+    font-family: var(--verdana);
 }
 /* Projects */
 .project-box {
@@ -93,6 +110,13 @@ a:active {
     border-color: var(--grey3);
     margin: 10px;
     background-color: var(--grey2);
+}
+.project-version {
+    font-size: 25px;
+    margin: 0px;
+    color: var(--grey1);
+    font-weight: bold;
+    font-family: var(--verdana);
 }
 .project-image {
     width: 300px;
@@ -314,21 +338,19 @@ a:active {
     background-color: var(--grey1);
     text-align: center;
 }
-/* Button */
-#button {
+/* Buttons */
+#button-box {
+    width: 16%;
+    height: 80px;
     position: fixed;
     bottom: 10px;
     right: 10px;
-    border: transparent;
-    border-radius: 25px;
-    margin: 20px;
-    background-color: var(--grey4);
 }
-#button-text {
-    font-size: 120%;
-    color: var(--grey1);
-    font-weight: bold;
-    font-family: var(--verdana);
+#button-left {
+    float: left;
+}
+#button-right {
+    float: right;
 }
 /* Special Image */
 #project-image-tdim {
