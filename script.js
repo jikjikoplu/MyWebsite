@@ -5,13 +5,15 @@ var pythonBlue = "#2525ff",
     javascriptYellow = "#ffff25",
     htmlOrange = "#ff9225",
     cssPurple = "#922592",
-    grey = "#606060",
+    grey3 = "#404040",
+    grey4 = "#606060",
+    grey5 = "#808080",
     green = "#00b050";
 
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [6323, 2482, 2569, 559, 374, 5, 3, 6, 2, 2],
+    valueList = [6323, 2488, 2583, 557, 375, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
@@ -22,25 +24,25 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1281, 1082, 167, 197, 1268, 94, 325, 469, 876, 794,
+    projectLocList = [1281, 1092, 167, 200, 1268, 94, 325, 469, 882, 794,
                       694, 654, 2561, 1845],
-    projectColorList = ["j", "hc", "js", "js", "js", "js", "j", "py",
+    projectColorList = ["j", "hcj", "hcj", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
     bigPercent = 0, bigHeight = 0, c = 0,
     totalProjects = projectNameList.length;
 
 //Section Four
-var version = "v2.6.1";
+var version = "v2.7.1";
 
 // Section Five
 var showLinks = false,
-    altLinkIdList = ["alt-link-pong", "alt-link-rg2-1", "alt-link-rg2-2",
-                     "alt-link-basim", "alt-link-3srg", "alt-link-tdim"];
+    altLinkIdList = ["alt-link-pong", "alt-link-rg2", "alt-link-basim",
+                     "alt-link-3srg", "alt-link-tdim"];
 
 // Section 6
 var showVersions = false,
-    vTagList = ["v1.1", "v2.6.1", "v2.2", "v1.1", "v1.2"]
+    vTagList = ["v1.2", version, "v2.2", "v1.1", "v1.2"]
 
 
 // CODE
@@ -112,8 +114,7 @@ for(i = 0; i < runLength; i++){
         "(" + Math.round(myPercent * 100) + "%)";
 }
 
-// Section 2: Graph 4 Heights
-// Wrong order because project stat lists are deleted in Section 3
+// Section 2: Graph 4 Heights and Projects Tags
 for(i = 0; i < totalProjects; i++){
     myProject = projectNameList[i];
     myLoc = projectLocList[i];
@@ -121,15 +122,19 @@ for(i = 0; i < totalProjects; i++){
     switch(myColor){
         case "py":
             myColor = pythonBlue;
+            myType = "Python";
             break;
         case "j":
             myColor = javaRed;
+            myType = "Java";
             break;
         case "js":
             myColor = javascriptYellow;
+            myType = "JavaScript";
             break;
-        case "hc":
+        case "hcj":
             myColor = htmlOrange;
+            myType = "HTML, CSS, JS";
             break;
     }
     myPercent = myLoc / totalLoc;
@@ -146,17 +151,25 @@ for(i = 0; i < totalProjects; i++){
         bigPercent += myPercent;
         bigHeight += myHeight;
     }
-    document.getElementsByClassName("second-tag")[i].innerHTML =
+    document.getElementsByClassName("project-tag-text")[i * 2].innerHTML =
+        myType;
+    document.getElementsByClassName("project-tag-text")[i * 2 + 1].innerHTML =
         myLoc + " LoC";
+    document.getElementsByClassName("project-tag")[i * 2]
+        .style.backgroundColor = myColor;
+    myValue = myLoc / maxProjectLoc * 255;
+    myColor = "rgb(" + (255 - myValue) + ", " + (0 + myValue) + ", 0)";
+    document.getElementsByClassName("project-tag-text")[i * 2 + 1]
+        .style.color = myColor;
 }
 myBar = document.getElementsByClassName("graph-bar-wide")[c];
 myBarText = document.getElementsByClassName("graph-bar-wide-text")[c];
 myBarText.innerHTML =
     "Other - " + (Math.round(bigPercent * 1000) / 10) + "%";
 myBar.style.height = (bigHeight - 2) + "px";
-myBar.style.backgroundColor = "#808080";
+myBar.style.backgroundColor = grey5;
 
-// Section 3: Graph 3 Widths and Projects Tags
+// Section 3: Graph 3 Widths
 for(i = 0; i < 10; i++){
     myPos = projectLocList.indexOf(Math.max(...projectLocList));
     myProject = projectNameList[myPos];
@@ -172,7 +185,7 @@ for(i = 0; i < 10; i++){
         case "js":
             myColor = javascriptYellow;
             break;
-        case "hc":
+        case "hcj":
             myColor = htmlOrange;
             break;
     }
@@ -197,10 +210,7 @@ function toggleLinks(){
         showLinks = true;
         document.getElementById("button-left").style.backgroundColor = green;
         for(i = 0; i < altLinkIdList.length; i++){
-            if(altLinkIdList[i] == "alt-link-rg2-2"){
-                document.getElementById(altLinkIdList[i]).innerHTML =
-                    "Alternate Website";
-            }else if(altLinkIdList[i] == "alt-link-frmbot"){
+            if(altLinkIdList[i] == "alt-link-frmbot"){
                 document.getElementById(altLinkIdList[i]).innerHTML =
                     "Add FarmBot to a Discord Server";
             }else{
@@ -210,7 +220,7 @@ function toggleLinks(){
         }
     }else{
         showLinks = false;
-        document.getElementById("button-left").style.backgroundColor = grey;
+        document.getElementById("button-left").style.backgroundColor = grey4;
         for(i = 0; i < altLinkIdList.length; i++){
             document.getElementById(altLinkIdList[i]).innerHTML = "";
         }
@@ -228,7 +238,7 @@ function toggleVersions(){
         }
     }else{
         showVersions = false;
-        document.getElementById("button-right").style.backgroundColor = grey;
+        document.getElementById("button-right").style.backgroundColor = grey4;
         for(i = 0; i < vTagList.length; i++){
             document.getElementsByClassName("project-version")[i]
                 .innerHTML = "";
