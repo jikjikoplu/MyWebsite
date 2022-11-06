@@ -159,9 +159,10 @@ a:active {
     background-color: var(--grey3);
 }
 .project-tag-text {
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 8px;
-    color: var(--green);
+    color: var(--grey1);
+    font-weight: bold;
     font-family: var(--verdana);
 }
 /* Planned Projects */
