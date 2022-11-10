@@ -156,7 +156,6 @@ a:active {
     height: 50px;
     display: inline-block;
     margin: 10px;
-    background-color: var(--grey3);
 }
 .project-tag-text {
     font-size: 18px;
