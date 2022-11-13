@@ -13,7 +13,7 @@ var pythonBlue = "#2525ff",
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [6323, 2488, 2583, 557, 374, 5, 3, 6, 2, 2],
+    valueList = [6552, 2488, 2583, 554, 374, 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
@@ -24,8 +24,8 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1281, 1090, 167, 201, 1268, 94, 325, 469, 882, 794,
-                      694, 654, 2561, 1845],
+    projectLocList = [1281, 1087, 167, 201, 1268, 94, 325, 469, 882, 794,
+                      694, 883, 2561, 1845],
     projectColorList = ["j", "hcj", "hcj", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
@@ -33,7 +33,7 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 //Section Four
-var version = "v2.8.0";
+var version = "v2.8.1";
 
 // Section Five
 var showLinks = false,
@@ -42,7 +42,7 @@ var showLinks = false,
 
 // Section 6
 var showVersions = false,
-    vTagList = ["v1.2", version, "v2.2", "v1.1", "v1.2"]
+    vTagList = ["v1.2", version, "v2.3", "v1.1", "v1.2"]
 
 
 // CODE
@@ -51,15 +51,6 @@ for(var i = 0; i < runLength / 2; i++){
 }
 for(var i = 0; i < totalProjects; i++){
     totalLoc2 += projectLocList[i];
-}
-if(totalLoc != totalLoc2){
-    alert(`Error: Total Lines of Code doesn't match.
-Lines of Code in Graph 1: ` + totalLoc + `
-Lines of Code in Graph 4: ` + totalLoc2 + `
-If you know me (the creator of this website),
-please contact me. Otherwise, go to either
-Replit or Github (see very top of page)
-if you have an account on either.`);
 }
 
 // Section 1: Graphs 1 & 2 Widths
@@ -243,4 +234,15 @@ function toggleVersions(){
                 .innerHTML = "";
         }
     }
+}
+
+// Error Warning
+if(totalLoc != totalLoc2){
+    alert(`Error: Total Lines of Code doesn't match.
+Lines of Code in Graph 1: ` + totalLoc + `
+Lines of Code in Graph 4: ` + totalLoc2 + `
+If you know me (the creator of this website),
+please contact me. Otherwise, go to either
+Replit or Github (see very top of page)
+if you have an account on either.`);
 }
