@@ -3,20 +3,27 @@
 var pythonBlue = "#2525ff",
     javaRed = "#ff2525",
     javascriptYellow = "#ffff25",
-    htmlOrange = "#ff9225",
+    htmlOrange = "#ff7c25",
     cssPurple = "#922592",
-    grey3 = "#404040",
     grey4 = "#606060",
     grey5 = "#808080",
     green = "#00b050";
 
+// Section Four
+var [myWebHTML, myWebCSS, myWebJS] = [541, 340, 242],
+    myWebNameList = ["HTML", "CSS", "JavaScript"],
+    myWebLocList = [myWebHTML, myWebCSS, myWebJS],
+    myWebColorList = [htmlOrange, cssPurple, javascriptYellow],
+    myWebTotalLoc = myWebHTML + myWebCSS + myWebJS;
+
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [6552, 2488, 2583, 554, 374, 5, 3, 6, 2, 2],
+    valueList = [6552, 2488, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
+                 5, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
-    widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
-    runLength = valueList.length, graphBar, graphBarText, myWidthPercent;
+    myLoc, widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
+    runLength = valueList.length, myWidthPercent, totalLocString;
 
 // Section Two and Three
 var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
@@ -24,25 +31,25 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
                        "The Random Trivia Game", "MapGen 4", "Exorcist",
                        "FarmBot", "The Devil in Me", "LimeBot",
                        "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1281, 1087, 167, 201, 1268, 94, 325, 469, 882, 794,
-                      694, 883, 2561, 1845],
+    projectLocList = [1281, myWebHTML + myWebCSS + myWebJS, 167, 214, 1281,
+                      107, 325, 469, 882, 794, 707, 883, 2561, 1845],
     projectColorList = ["j", "hcj", "hcj", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
-    maxProjectLoc = Math.max(...projectLocList), myProject, myBar,
+    maxProjectLoc = Math.max(...projectLocList), myProject, myBar, myBarText,
     bigPercent = 0, bigHeight = 0, c = 0,
     totalProjects = projectNameList.length;
 
-//Section Four
-var version = "v2.8.2";
-
 // Section Five
+var version = "v2.9.0";
+
+// Section Six
 var showLinks = false,
     altLinkIdList = ["alt-link-pong", "alt-link-rg2", "alt-link-basim",
                      "alt-link-3srg", "alt-link-tdim"];
 
-// Section 6
+// Section Seven
 var showVersions = false,
-    vTagList = ["v1.2", version, "v2.3", "v1.1", "v1.2"]
+    vTagList = ["v1.2", version, "v2.3", "v1.1", "v1.2"];
 
 
 // CODE
@@ -103,6 +110,10 @@ for(i = 0; i < runLength; i++){
     document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML =
         myName + " - " + myValue + myType +
         "(" + Math.round(myPercent * 100) + "%)";
+    if(myName == "HTML" && myValue < 100){
+        document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML +=
+            "<br>(4 JS projects include HTML as well.)";
+    }
 }
 
 // Section 2: Graph 4 Heights and Projects Tags
@@ -137,7 +148,7 @@ for(i = 0; i < totalProjects; i++){
             myProject + " - " + (Math.round(myPercent * 1000) / 10) + "%";
         myBar.style.height = (myHeight - 2) + "px";
         myBar.style.backgroundColor = myColor;
-        c++
+        c++;
     }else{
         bigPercent += myPercent;
         bigHeight += myHeight;
@@ -191,10 +202,26 @@ for(i = 0; i < 10; i++){
         .style.backgroundColor = myColor;
 }
 
-// Section 4: Website Version
+// Section 4: Graph 5
+for(i = 0; i < 3; i++){
+    myName = myWebNameList[i];
+    myLoc = myWebLocList[i];
+    myColor = myWebColorList[i];
+    myPercent = myLoc / myWebTotalLoc;
+    myWidth = myPercent * 400 - 2;
+    document.getElementsByClassName("graph-bar-wide-text")[i + 10].innerHTML =
+        myName + " - " + myLoc +
+        " Lines of Code (" + Math.round(myPercent * 100) + "%)";
+    document.getElementsByClassName("graph-bar-wide")[i + 10].style.height =
+        myWidth + "px";
+    document.getElementsByClassName("graph-bar-wide")[i + 10]
+        .style.backgroundColor = myColor;
+}
+
+// Section 5: Website Version
 document.getElementById("title-section-version").innerHTML = version;
 
-// Section 5: Toggle Links Button
+// Section 6: Toggle Links Button
 function toggleLinks(){
     if(! showLinks){
         showLinks = true;
@@ -217,7 +244,7 @@ function toggleLinks(){
     }
 }
 
-// Section 6: Toggle Versions Button
+// Section 7: Toggle Versions Button
 function toggleVersions(){
     if(! showVersions){
         showVersions = true;
