@@ -10,7 +10,7 @@ var pythonBlue = "#2525ff",
     green = "#00b050";
 
 // Section Four
-var [myWebHTML, myWebCSS, myWebJS] = [541, 340, 242],
+var [myWebHTML, myWebCSS, myWebJS] = [543, 340, 242],
     myWebNameList = ["HTML", "CSS", "JavaScript"],
     myWebLocList = [myWebHTML, myWebCSS, myWebJS],
     myWebColorList = [htmlOrange, cssPurple, javascriptYellow],
@@ -40,7 +40,7 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 // Section Five
-var version = "v2.10.0";
+var version = "v2.10.1";
 
 // Section Six
 var showLinks = false,
