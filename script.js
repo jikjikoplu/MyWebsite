@@ -40,7 +40,7 @@ var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
     totalProjects = projectNameList.length;
 
 // Section Five
-var version = "v2.10.2";
+var version = "v2.10.3";
 
 // Section Six
 var showLinks = false,
@@ -49,7 +49,7 @@ var showLinks = false,
 
 // Section Seven
 var showVersions = false,
-    vTagList = ["v1.3", version, "v2.4", "v1.1", "v1.2"];
+    vTagList = ["v1.4", version, "v2.4", "v1.1", "v1.2"];
 
 
 // CODE
