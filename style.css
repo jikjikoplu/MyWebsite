@@ -91,7 +91,7 @@ a:active {
     margin: 0px;
     border: transparent;
     border-radius: 25px;
-    background-color: var(--grey4);
+    background-color: var(--green);
 }
 .button-text {
     font-size: 120%;
@@ -164,31 +164,6 @@ a:active {
     font-weight: bold;
     font-family: var(--verdana);
 }
-/* Planned Projects */
-.planned-project-box {
-    width: 400px;
-    height: 400px;
-    display: inline-block;
-    border-style: inset;
-    border-width: 10px;
-    border-color: var(--grey3);
-    margin: 10px;
-    background-color: var(--grey2);
-    overflow: auto;
-}
-.planned-project-title {
-    font-size: 25px;
-    margin: 15px;
-    color: var(--grey4);
-    font-weight: bold;
-    font-family: var(--georgia);
-}
-.planned-project-description {
-    font-size: 20px;
-    margin: 15px;
-    color: var(--grey3);
-    font-family: var(--verdana);
-}
 /* Graph */
 .graph-box {
     width: 400px;
@@ -216,7 +191,7 @@ a:active {
     height: 80px;
 }
 .graph-bar-tall-text {
-    font-size: 18px;
+    font-size: 22px;
     margin: 5px;
     text-align: left;
 }
@@ -224,7 +199,7 @@ a:active {
     height: 40px;
 }
 .graph-bar-small-text {
-    font-size: 16px;
+    font-size: 18px;
     margin: 5px;
     text-align: left;
 }
@@ -234,7 +209,7 @@ a:active {
     border-color: var(--grey3);
 }
 .graph-bar-wide-text {
-    font-size: 15px;
+    font-size: 18px;
     margin: 0px;
     text-align: center;
 }
