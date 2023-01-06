@@ -10,7 +10,7 @@ var pythonBlue = "#2525ff",
     green = "#00b050";
 
 // Section Four
-var [myWebHTML, myWebCSS, myWebJS] = [488, 316, 249],
+var [myWebHTML, myWebCSS, myWebJS] = [513, 316, 250],
     myWebNameList = ["HTML", "CSS", "JavaScript"],
     myWebLocList = [myWebHTML, myWebCSS, myWebJS],
     myWebColorList = [htmlOrange, cssPurple, javascriptYellow],
@@ -19,28 +19,29 @@ var [myWebHTML, myWebCSS, myWebJS] = [488, 316, 249],
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [6519, 2531, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
-                 5, 3, 6, 2, 2],
+    valueList = [7108, 2531, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
+                 6, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     myLoc, widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
     runLength = valueList.length, myWidthPercent;
 
 // Section Two and Three
-var projectNameList = ["FakeOS", "My Website", "Pong", "Racing Game 2",
-                       "Battlefield Sim", "30 Second Racing Game",
-                       "The Random Trivia Game", "MapGen 4", "Exorcist",
-                       "FarmBot", "The Devil in Me", "LimeBot",
-                       "Kingdom of War - Multiplayer", "Kingdom of War"],
-    projectLocList = [1324, myWebHTML + myWebCSS + myWebJS, 167, 214, 1281,
-                      107, 325, 434, 882, 794, 707, 885, 2561, 1845],
-    projectColorList = ["j", "hcj", "hcj", "js", "js", "js", "j", "py",
+var projectNameList = ["MapGen 5", "FakeOS", "My Website", "Pong",
+                       "Racing Game 2", "Battlefield Sim",
+                       "30 Second Racing Game", "The Random Trivia Game",
+                       "MapGen 4", "Exorcist", "FarmBot", "The Devil in Me",
+                       "LimeBot", "Kingdom of War - Multiplayer",
+                       "Kingdom of War"],
+    projectLocList = [589, 1324, myWebHTML + myWebCSS + myWebJS, 167, 214,
+                      1281, 107, 325, 434, 882, 794, 707, 885, 2561, 1845],
+    projectColorList = ["py", "j", "hcj", "hcj", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar, myBarText,
     bigPercent = 0, bigHeight = 0, ii = 0,
     totalProjects = projectNameList.length;
 
 // Section Five
-var version = "v2.11.0";
+var version = "v2.11.1";
 
 // Section Six
 var showLinks = true,
@@ -209,12 +210,12 @@ for(i = 0; i < 3; i++){
     myColor = myWebColorList[i];
     myPercent = myLoc / myWebTotalLoc;
     myWidth = myPercent * 400 - 2;
-    document.getElementsByClassName("graph-bar-wide-text")[i + 10].innerHTML =
-        myName + " - " + formatNum(myLoc) +
+    document.getElementsByClassName("graph-bar-wide-text")[i + ii + 1]
+        .innerHTML = myName + " - " + formatNum(myLoc) +
         " Lines of Code (" + Math.round(myPercent * 100) + "%)";
-    document.getElementsByClassName("graph-bar-wide")[i + 10].style.height =
-        myWidth + "px";
-    document.getElementsByClassName("graph-bar-wide")[i + 10]
+    document.getElementsByClassName("graph-bar-wide")[i + ii + 1]
+        .style.height = myWidth + "px";
+    document.getElementsByClassName("graph-bar-wide")[i + ii + 1]
         .style.backgroundColor = myColor;
 }
 
