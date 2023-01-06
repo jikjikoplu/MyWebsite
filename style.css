@@ -297,6 +297,7 @@ a:active {
 }
 #more-info {
     font-size: 18px;
+    margin: 0px;
     padding: 5px;
     color: var(--grey4);
     font-family: var(--verdana);
