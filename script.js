@@ -10,7 +10,7 @@ var pythonBlue = "#2525ff",
     green = "#00b050";
 
 // Section Four
-var [myWebHTML, myWebCSS, myWebJS] = [513, 316, 250],
+var [myWebHTML, myWebCSS, myWebJS] = [513, 317, 250],
     myWebNameList = ["HTML", "CSS", "JavaScript"],
     myWebLocList = [myWebHTML, myWebCSS, myWebJS],
     myWebColorList = [htmlOrange, cssPurple, javascriptYellow],
