@@ -41,7 +41,7 @@ var projectNameList = ["MapGen 5", "FakeOS", "My Website", "Pong",
     totalProjects = projectNameList.length;
 
 // Section Five
-var version = "v2.11.2";
+var version = "v2.11.3";
 
 // Section Six
 var showLinks = true,
@@ -49,7 +49,7 @@ var showLinks = true,
 
 // Section Seven
 var showVersions = true,
-    vTagList = ["v1.5", version, "v2.4", "v1.1", "v1.2"];
+    vTagList = ["v1.6", version, "v2.4", "v1.1", "v1.2"];
 
 
 // CODE
