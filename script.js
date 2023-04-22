@@ -19,7 +19,7 @@ var [myWebHTML, myWebCSS, myWebJS] = [513, 317, 250],
 // Section One
 var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
                 "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [7130, 2531, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
+    valueList = [7155, 2531, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
                  6, 3, 6, 2, 2],
     myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
     myLoc, widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
@@ -33,7 +33,7 @@ var projectNameList = ["MapGen 5", "FakeOS", "My Website", "Pong",
                        "LimeBot", "Kingdom of War - Multiplayer",
                        "Kingdom of War"],
     projectLocList = [589, 1324, myWebHTML + myWebCSS + myWebJS, 167, 214,
-                      1281, 107, 325, 434, 882, 794, 707, 907, 2561, 1845],
+                      1281, 107, 325, 434, 882, 794, 707, 932, 2561, 1845],
     projectColorList = ["py", "j", "hcj", "hcj", "js", "js", "js", "j", "py",
                         "j", "py", "js", "py", "py", "py"],
     maxProjectLoc = Math.max(...projectLocList), myProject, myBar, myBarText,
@@ -41,7 +41,7 @@ var projectNameList = ["MapGen 5", "FakeOS", "My Website", "Pong",
     totalProjects = projectNameList.length;
 
 // Section Five
-var version = "v2.11.6";
+var version = "v2.11.7";
 
 // Section Six
 var showLinks = true,
@@ -49,7 +49,7 @@ var showLinks = true,
 
 // Section Seven
 var showVersions = true,
-    vTagList = ["v1.6", version, "v2.4", "v1.1", "v1.2"];
+    vTagList = ["v1.6", version, "v2.6", "v1.1", "v1.2"];
 
 
 // CODE
