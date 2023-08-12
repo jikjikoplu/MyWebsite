@@ -1,284 +1,329 @@
-// VARIABLES
-// Colors
-var pythonBlue = "#2525ff",
-    javaRed = "#ff2525",
-    javascriptYellow = "#ffff25",
-    htmlOrange = "#ff7c25",
-    cssPurple = "#922592",
-    grey4 = "#606060",
-    grey5 = "#808080",
-    green = "#00b050";
+// CLASSES
 
-// Section Four
-var [myWebHTML, myWebCSS, myWebJS] = [513, 317, 250],
-    myWebNameList = ["HTML", "CSS", "JavaScript"],
-    myWebLocList = [myWebHTML, myWebCSS, myWebJS],
-    myWebColorList = [htmlOrange, cssPurple, javascriptYellow],
-    myWebTotalLoc = myWebHTML + myWebCSS + myWebJS;
-
-// Section One
-var nameList = ["Python", "Java", "JavaScript", "HTML", "CSS",
-                "Python", "Java", "JavaScript", "HTML", "CSS"],
-    valueList = [7155, 2531, 2364 + myWebJS, 78 + myWebHTML, 34 + myWebCSS,
-                 6, 3, 6, 2, 2],
-    myPos,myName, myValue, myColor, myPercent, myWidth, myType, myHeight,
-    myLoc, widthMax = 400, totalValue, maxValue, totalLoc = 0, totalLoc2 = 0,
-    runLength = valueList.length, myWidthPercent;
-
-// Section Two and Three
-var projectNameList = ["MapGen 5", "FakeOS", "My Website", "Pong",
-                       "Racing Game 2", "Battlefield Sim",
-                       "30 Second Racing Game", "The Random Trivia Game",
-                       "MapGen 4", "Exorcist", "FarmBot", "The Devil in Me",
-                       "LimeBot", "Kingdom of War - Multiplayer",
-                       "Kingdom of War"],
-    projectLocList = [589, 1324, myWebHTML + myWebCSS + myWebJS, 167, 214,
-                      1281, 107, 325, 434, 882, 794, 707, 932, 2561, 1845],
-    projectColorList = ["py", "j", "hcj", "hcj", "js", "js", "js", "j", "py",
-                        "j", "py", "js", "py", "py", "py"],
-    maxProjectLoc = Math.max(...projectLocList), myProject, myBar, myBarText,
-    bigPercent = 0, bigHeight = 0, ii = 0,
-    totalProjects = projectNameList.length;
-
-// Section Five
-var version = "v2.11.7";
-
-// Section Six
-var showLinks = true,
-    numAltLinks = document.querySelectorAll(".project-alt-link").length;
-
-// Section Seven
-var showVersions = true,
-    vTagList = ["v1.6", version, "v2.6", "v1.1", "v1.2"];
-
-
-// CODE
-for(var i = 0; i < runLength / 2; i++){
-    totalLoc += valueList[i];
-}
-for(var i = 0; i < totalProjects; i++){
-    totalLoc2 += projectLocList[i];
-}
-
-// Section 1: Graphs 1 & 2
-document.getElementById("total-loc").innerHTML =
-    "Total: " + formatNum(totalLoc);
-document.getElementById("total-projects").innerHTML =
-    "Total: " + totalProjects;
-for(i = 0; i < runLength; i++){
-    if(i == 0){
-        totalValue = totalLoc;
-        maxValue = Math.max(...valueList);
-        myType = " LoC ";
-    }else if(i == 5){
-        totalValue = totalProjects;
-        maxValue = Math.max(...valueList);
-        myType = " Projects ";
-    }
-    myPos = valueList.indexOf(Math.max(...valueList));
-    myValue = valueList[myPos];
-    myName = nameList[myPos];
-    valueList.splice(myPos, 1);
-    nameList.splice(myPos, 1);
-    switch(myName){
-        case "Python":
-            myColor = pythonBlue;
-            break;
-        case "Java":
-            myColor = javaRed;
-            break;
-        case "JavaScript":
-            myColor = javascriptYellow;
-            break;
-        case "HTML":
-            myColor = htmlOrange;
-            break;
-        case "CSS":
-            myColor = cssPurple;
-            break;
-    }
-    myPercent = myValue / totalValue;
-    myWidthPercent = myValue / maxValue;
-    myWidth = myWidthPercent * widthMax;
-    document.getElementsByClassName("graph-bar-tall")[i].style.width =
-        myWidth + "px";
-    document.getElementsByClassName("graph-bar-tall")[i]
-        .style.backgroundColor = myColor;
-    document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML =
-        myName + " - " + formatNum(myValue) + myType +
-        "(" + Math.round(myPercent * 100) + "%)";
-    if(myName == "HTML" && myValue < 50){
-        document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML +=
-            "<br>(4 JS projects include HTML)";
+// Language
+class Language{
+    constructor(name, color){
+        this.name = name;
+        this.color = color;
+        this.totalLoc = 0;
+        this.totalProjects = 0;
     }
 }
 
-// Section 2: Graph 4 Heights and Projects Tags
-for(i = 0; i < totalProjects; i++){
-    myProject = projectNameList[i];
-    myLoc = projectLocList[i];
-    myColor = projectColorList[i];
-    switch(myColor){
-        case "py":
-            myColor = pythonBlue;
-            myType = "Python";
-            break;
-        case "j":
-            myColor = javaRed;
-            myType = "Java";
-            break;
-        case "js":
-            myColor = javascriptYellow;
-            myType = "JavaScript";
-            break;
-        case "hcj":
-            myColor = htmlOrange;
-            myType = "HTML, CSS, JS";
-            break;
+// Project
+class Project{
+    constructor(name, lang, loc, version){
+        this.name = name;
+        this.lang = lang;
+        this.loc = loc;
+        this.version = version;
     }
-    myPercent = myLoc / totalLoc;
-    myHeight = myPercent * 400;
-    if(myHeight >= 15){
-        myBar = document.getElementsByClassName("graph-bar-wide")[ii];
-        myBarText =
-            document.getElementsByClassName("graph-bar-wide-text")[ii];
-        myBarText.innerHTML =
-            myProject + " - " + (Math.round(myPercent * 1000) / 10) + "%";
-        myBar.style.height = (myHeight - 2) + "px";
-        myBar.style.backgroundColor = myColor;
-        ii++;
-    }else{
-        bigPercent += myPercent;
-        bigHeight += myHeight;
-    }
-    document.getElementsByClassName("project-tag-text")[i * 2].innerHTML =
-        myType;
-    document.getElementsByClassName("project-tag-text")[i * 2 + 1].innerHTML =
-        formatNum(myLoc) + " LoC";
-    document.getElementsByClassName("project-tag")[i * 2]
-        .style.backgroundColor = myColor;
-    myColor = "rgb(0, " + (myLoc / maxProjectLoc * 215 + 40) + ", 0)";
-    document.getElementsByClassName("project-tag")[i * 2 + 1]
-        .style.backgroundColor = myColor;
-}
-myBar = document.getElementsByClassName("graph-bar-wide")[ii];
-myBarText = document.getElementsByClassName("graph-bar-wide-text")[ii];
-myBarText.innerHTML =
-    "Other - " + (Math.round(bigPercent * 1000) / 10) + "%";
-myBar.style.height = (bigHeight - 2) + "px";
-myBar.style.backgroundColor = grey5;
-
-// Section 3: Graph 3
-for(i = 0; i < 10; i++){
-    myPos = projectLocList.indexOf(Math.max(...projectLocList));
-    myProject = projectNameList[myPos];
-    myLoc = projectLocList[myPos];
-    myColor = projectColorList[myPos];
-    switch(myColor){
-        case "py":
-            myColor = pythonBlue;
-            break;
-        case "j":
-            myColor = javaRed;
-            break;
-        case "js":
-            myColor = javascriptYellow;
-            break;
-        case "hcj":
-            myColor = htmlOrange;
-            break;
-    }
-    myWidth = (myLoc / maxProjectLoc) * widthMax;
-    projectNameList.splice(myPos, 1);
-    projectLocList.splice(myPos, 1);
-    projectColorList.splice(myPos, 1);
-    if(myProject.length >= 25){
-        myProject += "<wbr>"
-    }
-    document.getElementsByClassName("graph-bar-small-text")[i].innerHTML =
-        "" + (i+1) + ". " + myProject + " - " + formatNum(myLoc);
-    document.getElementsByClassName("graph-bar-small")[i].style.width =
-        myWidth + "px";
-    document.getElementsByClassName("graph-bar-small")[i]
-        .style.backgroundColor = myColor;
 }
 
-// Section 4: Graph 5
-for(i = 0; i < 3; i++){
-    myName = myWebNameList[i];
-    myLoc = myWebLocList[i];
-    myColor = myWebColorList[i];
-    myPercent = myLoc / myWebTotalLoc;
-    myWidth = myPercent * 400 - 2;
-    document.getElementsByClassName("graph-bar-wide-text")[i + ii + 1]
-        .innerHTML = myName + " - " + formatNum(myLoc) +
-        " Lines of Code (" + Math.round(myPercent * 100) + "%)";
-    document.getElementsByClassName("graph-bar-wide")[i + ii + 1]
-        .style.height = myWidth + "px";
-    document.getElementsByClassName("graph-bar-wide")[i + ii + 1]
-        .style.backgroundColor = myColor;
+// FUNCTIONS
+
+function formatNum(num){
+    return num.toLocaleString("en-US").replace(",", " ");
 }
 
-// Section 5: Website Version
-document.getElementById("title-section-version").innerHTML = version;
+// Buttons
 
-// Section 6: Toggle Links Button
-for(i = 0; i < numAltLinks; i++){
-    document.getElementsByClassName("project-alt-link")[i].innerHTML =
-        "Website";
-}
+// Toggle Links Button
 function toggleLinks(){
-    if(! showLinks){
-        showLinks = true;
+    showLinks = ! showLinks;
+    if(showLinks){
         document.getElementById("button-left").style.backgroundColor = green;
-        for(i = 0; i < numAltLinks; i++){
+        for(i = 0; i < document.querySelectorAll(".project-alt-link").length;
+        i++){
             document.getElementsByClassName("project-alt-link")[i].innerHTML =
                 "Website";
         }
     }else{
-        showLinks = false;
         document.getElementById("button-left").style.backgroundColor = grey4;
-        for(i = 0; i < numAltLinks; i++){
+        for(i = 0; i < document.querySelectorAll(".project-alt-link").length;
+        i++){
             document.getElementsByClassName("project-alt-link")[i].innerHTML =
                 "";
         }
     }
 }
 
-// Section 7: Toggle Versions Button
-for(i = 0; i < vTagList.length; i++){
-    document.getElementsByClassName("project-version")[i]
-        .innerHTML = vTagList[i];
-}
+// Toggle Versions
 function toggleVersions(){
-    if(! showVersions){
-        showVersions = true;
+    showVersions = ! showVersions;
+    if(showVersions){
         document.getElementById("button-right").style.backgroundColor = green;
-        for(i = 0; i < vTagList.length; i++){
-            document.getElementsByClassName("project-version")[i]
-                .innerHTML = vTagList[i];
+        var i = 0;
+        for(let ii = projectList.length - 1; ii >= 0; ii--){
+            if(projectList[ii].version != ""){
+                document.getElementsByClassName("project-version")[i++]
+                    .innerHTML = projectList[ii].version;
+            }
         }
     }else{
-        showVersions = false;
         document.getElementById("button-right").style.backgroundColor = grey4;
-        for(i = 0; i < vTagList.length; i++){
-            document.getElementsByClassName("project-version")[i]
-                .innerHTML = "";
+        var i = 0;
+        for(let ii = projectList.length - 1; ii >= 0; ii--){
+            if(projectList[ii].version != ""){
+                document.getElementsByClassName("project-version")[i++]
+                    .innerHTML = "";
+            }
         }
     }
 }
 
-// Error Warning
-if(totalLoc != totalLoc2){
-    alert(`Error: Total Lines of Code doesn't match.
-Lines of Code in Graph 1: ` + totalLoc + `
-Lines of Code in Graph 4: ` + totalLoc2 + `
-If you know me (the creator of this website),
-please contact me. Otherwise, go to either
-Replit or Github (see very top of page)
-if you have an account on either.`);
+// VARIABLES
+
+// Colors
+var grey4 = "#606060";
+var grey5 = "#808080";
+var green = "#00b050";
+
+// Languages
+var python = new Language("Python", "#2525ff");
+var java = new Language("Java", "#ff2525");
+var cSharp = new Language("C#", "#25ff25", "cs");
+var javaScript = new Language("JavaScript", "#ffff25");
+var html = new Language("HTML", "#ff7c25");
+var css = new Language("CSS", "#922592");
+var langList = [python, java, cSharp, javaScript, html, css];
+
+// Projects
+kingdomOfWar = new Project("Kingdom of War", python, 1845, "v1.2");
+kingdomOfWarMultiplayer =
+    new Project("Kingdom of War - Multiplayer<wbr>", python, 2561, "v1.1");
+limeBot = new Project("LimeBot", python, 932, "v2.6");
+theDevilInMe =
+    new Project("The Devil in Me", [javaScript, html], [694, 13], "");
+farmBot = new Project("FarmBot", python, 794, "");
+exorcist = new Project("Exorcist", java, 882, "");
+mapGen4 = new Project("MapGen 4", python, 434, "");
+theRandomTriviaGame = new Project("The Random Trivia Game", java, 325, "");
+thirtySecondRacingGame =
+    new Project("30 Second Racing Game", [javaScript, html], [94, 13], "");
+battlefieldSimulator =
+    new Project("Battlefield Simulator", [javaScript, html], [1268, 13], "");
+racingGame2 = new Project("Racing Game 2", [javaScript, html], [201, 13], "");
+pong = new Project("Pong", [javaScript, html, css], [107, 26, 34], "");
+myWebsite = new Project("My Website", [javaScript, html, css],
+    [280, 520, 317], "v2.12.1");
+fakeOS = new Project("FakeOS", java, 1324, "v1.6");
+mapGen5 = new Project("MapGen 5", python, 589, "");
+worldGen = new Project("WorldGen", cSharp, 368, "");
+var projectList = [kingdomOfWar, kingdomOfWarMultiplayer, limeBot,
+    theDevilInMe, farmBot, exorcist, mapGen4, theRandomTriviaGame,
+    thirtySecondRacingGame, battlefieldSimulator, racingGame2, pong,
+    myWebsite, fakeOS, mapGen5, worldGen];
+
+// Buttons
+var showLinks = false;
+var showVersions = false;
+
+// MAIN CODE
+
+// Setup
+var totalLoc = 0;
+for(let i = 0; i < langList.length; i++){
+    for(let ii = 0; ii < projectList.length; ii++){
+        if(projectList[ii].lang === langList[i]){
+            langList[i].totalLoc += projectList[ii].loc;
+            langList[i].totalProjects++;
+        }else{
+            try{
+                if(projectList[ii].lang.includes(langList[i])){
+                langList[i].totalLoc += projectList[ii].loc[
+                    projectList[ii].lang.indexOf(langList[i])];
+                    langList[i].totalProjects++;
+                }
+            }catch(e){}
+        }
+    }
+    totalLoc += langList[i].totalLoc;
 }
 
-function formatNum(num){
-    return num.toLocaleString("en-US").replace(",", " ");
+// Graph 1
+// Graph Subtitle
+document.getElementById("total-loc").innerHTML =
+    "Total: " + formatNum(totalLoc);
+// Sorting Language List
+var langListLoc = langList.slice(0);
+for(let i = 0; i < langListLoc.length - 1; i++){
+    for(let ii = 0; ii < langListLoc.length - i - 1; ii++){
+        if(langListLoc[ii + 1].totalLoc > langListLoc[ii].totalLoc){
+            var temp = langListLoc[ii];
+            langListLoc[ii] = langListLoc[ii + 1];
+            langListLoc[ii + 1] = temp;
+        }
+    }
 }
+// Graph Bars
+for(let i = 0; i < langListLoc.length; i++){
+    document.getElementsByClassName("graph-bar-tall")[i].style.width =
+        400 * (langListLoc[i].totalLoc / langListLoc[0].totalLoc) + "px";
+    document.getElementsByClassName("graph-bar-tall")[i]
+        .style.backgroundColor = langListLoc[i].color;
+    document.getElementsByClassName("graph-bar-tall-text")[i].innerHTML =
+        langListLoc[i].name + " - " + formatNum(langListLoc[i].totalLoc) +
+        " LoC (" + Math.round(langListLoc[i].totalLoc / totalLoc * 100) +
+        "%)";
+}
+
+// Graph 2
+// Graph Subtitle
+document.getElementById("total-projects").innerHTML =
+    "Total: " + formatNum(projectList.length);
+// Sorting Language List
+var langListProjects = langList.slice(0);
+for(let i = 0; i < langListProjects.length - 1; i++){
+    for(let ii = 0; ii < langListProjects.length - i - 1; ii++){
+        if(langListProjects[ii + 1].totalProjects >
+        langListProjects[ii].totalProjects){
+            var temp = langListProjects[ii];
+            langListProjects[ii] = langListProjects[ii + 1];
+            langListProjects[ii + 1] = temp;
+        }
+    }
+}
+// Graph Bars
+for(let i = 0; i < langListProjects.length; i++){
+    let ii = i + langListProjects.length;
+    document.getElementsByClassName("graph-bar-tall")[ii].style.width =
+        400 * (langListProjects[i].totalProjects /
+        langListProjects[0].totalProjects) + "px";
+    document.getElementsByClassName("graph-bar-tall")[ii]
+        .style.backgroundColor = langListProjects[i].color;
+    document.getElementsByClassName("graph-bar-tall-text")[ii].innerHTML =
+        langListProjects[i].name + " - " +
+        formatNum(langListProjects[i].totalProjects) + " Projects (" +
+        Math.round(langListProjects[i].totalProjects /
+        projectList.length * 100) + "%)";
+}
+
+// Graph 3
+// Sorting Project List
+var projectListLoc = projectList.slice(0);
+for(let i = 0; i < projectListLoc.length - 1; i++){
+    for(let ii = 0; ii < projectListLoc.length - i - 1; ii++){
+        var loc;
+        switch(typeof projectListLoc[ii].loc){
+            case "number":
+                loc = projectListLoc[ii].loc;
+                break;
+            default:
+                loc = 0;
+                for(let iii = 0; iii < projectListLoc[ii].loc.length; iii++){
+                    loc += projectListLoc[ii].loc[iii];
+                }
+                break;
+        }
+        var loc2;
+        switch(typeof projectListLoc[ii + 1].loc){
+            case "number":
+                loc2 = projectListLoc[ii + 1].loc;
+                break;
+            default:
+                loc2 = 0;
+                for(let iii = 0; iii < projectListLoc[ii + 1].loc.length;
+                iii++){
+                    loc2 += projectListLoc[ii + 1].loc[iii];
+                }
+                break;
+        }
+        if(loc2 > loc){
+            var temp = projectListLoc[ii];
+            projectListLoc[ii] = projectListLoc[ii + 1];
+            projectListLoc[ii + 1] = temp;
+        }
+    }
+}
+for(let i = 0; i < projectListLoc.length; i++){
+    var loc;
+    switch(typeof projectListLoc[i].loc){
+        case "number":
+            loc = projectListLoc[i].loc;
+            break;
+        default:
+            loc = 0;
+            for(let ii = 0; ii < projectListLoc[i].loc.length; ii++){
+                loc += projectListLoc[i].loc[ii];
+            }
+            break;
+    }
+    document.getElementsByClassName("graph-bar-small")[i].style.width =
+        400 * (loc / projectListLoc[0].loc) + "px";
+    var color;
+    try{
+        if(projectListLoc[i].lang.includes(css)){
+            color = html.color;
+        }else{
+            color = javaScript.color;
+        }
+    }catch(e){
+        color = projectListLoc[i].lang.color;
+    }
+    document.getElementsByClassName("graph-bar-small")[i]
+        .style.backgroundColor = color;
+    document.getElementsByClassName("graph-bar-small-text")[i].innerHTML =
+        (i + 1) + ". " + projectListLoc[i].name + " - " +
+        formatNum(loc);
+}
+
+// Graph 5
+for(let i = 0; i < 3; i++){
+    document.getElementsByClassName("graph-bar-wide")[i].style.height =
+        (projectList.length * 40) * (myWebsite.loc[i] / (myWebsite.loc[0] +
+        myWebsite.loc[1] + myWebsite.loc[2])) - 2 + "px";
+    document.getElementsByClassName("graph-bar-wide")[i]
+            .style.backgroundColor = myWebsite.lang[i].color;
+    document.getElementsByClassName("graph-bar-wide-text")[i].innerHTML =
+        myWebsite.lang[i].name + " - " + formatNum(myWebsite.loc[i]) +
+        " Lines of Code (" + Math.round(myWebsite.loc[i] / (myWebsite.loc[0] +
+        myWebsite.loc[1] + myWebsite.loc[2]) * 100) + ")%";
+}
+
+// Project Tags
+for(let i = projectList.length - 1; i >= 0 ; i--){
+    var loc;
+    switch(typeof projectList[i].loc){
+        case "number":
+            loc = projectList[i].loc;
+            break;
+        default:
+            loc = 0;
+            for(let ii = 0; ii < projectList[i].loc.length; ii++){
+                loc += projectList[i].loc[ii];
+            }
+            break;
+    }
+    var color;
+    var langName;
+    try{
+        if(projectList[i].lang.includes(css)){
+            color = html.color;
+            langName = "JS, HTML, CSS";
+        }else{
+            color = javaScript.color;
+            langName = "JS & HTML";
+        }
+    }catch(e){
+        color = projectList[i].lang.color;
+        langName = projectList[i].lang.name;
+    }
+    document.getElementsByClassName("project-tag")
+        [(projectList.length - i - 1) * 2].style.backgroundColor = color;
+    document.getElementsByClassName("project-tag")
+        [(projectList.length - i - 1) * 2 + 1].style.backgroundColor =
+        "rgb(0, " + (loc / projectListLoc[0].loc * 215 + 40) + ", 0)";
+    document.getElementsByClassName("project-tag-text")
+        [(projectList.length - i - 1) * 2].innerHTML = langName;
+    document.getElementsByClassName("project-tag-text")
+        [(projectList.length - i - 1) * 2 + 1].innerHTML = loc + " LoC";
+}
+
+// Website Version
+document.getElementById("title-section-version").innerHTML =
+    myWebsite.version;
+
+// Buttons
+toggleLinks();
+toggleVersions();
