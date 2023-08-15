@@ -17,6 +17,28 @@ class Project{
         this.lang = lang;
         this.loc = loc;
         this.version = version;
+        this.totalLoc;
+        switch(typeof this.loc){
+            case "number":
+                this.totalLoc = this.loc;
+                break;
+            default:
+                this.totalLoc = 0;
+                for(let i = 0; i < this.loc.length; i++){
+                    this.totalLoc += this.loc[i];
+                }
+                break;
+        }
+        this.color;
+        try{
+            if(this.lang.includes(css)){
+                this.color = html.color;
+            }else{
+                this.color = javaScript.color;
+            }
+        }catch(e){
+            this.color = this.lang.color;
+        }
     }
 }
 
@@ -106,10 +128,10 @@ battlefieldSimulator =
 racingGame2 = new Project("Racing Game 2", [javaScript, html], [201, 13], "");
 pong = new Project("Pong", [javaScript, html, css], [107, 26, 34], "");
 myWebsite = new Project("My Website", [javaScript, html, css],
-    [280, 520, 317], "v2.12.1");
+    [241, 521, 317], "v2.13.1");
 fakeOS = new Project("FakeOS", java, 1324, "v1.6");
 mapGen5 = new Project("MapGen 5", python, 589, "");
-worldGen = new Project("WorldGen", cSharp, 368, "");
+worldGen = new Project("WorldGen", cSharp, 381, "v1.1");
 var projectList = [kingdomOfWar, kingdomOfWarMultiplayer, limeBot,
     theDevilInMe, farmBot, exorcist, mapGen4, theRandomTriviaGame,
     thirtySecondRacingGame, battlefieldSimulator, racingGame2, pong,
@@ -204,32 +226,7 @@ for(let i = 0; i < langListProjects.length; i++){
 var projectListLoc = projectList.slice(0);
 for(let i = 0; i < projectListLoc.length - 1; i++){
     for(let ii = 0; ii < projectListLoc.length - i - 1; ii++){
-        var loc;
-        switch(typeof projectListLoc[ii].loc){
-            case "number":
-                loc = projectListLoc[ii].loc;
-                break;
-            default:
-                loc = 0;
-                for(let iii = 0; iii < projectListLoc[ii].loc.length; iii++){
-                    loc += projectListLoc[ii].loc[iii];
-                }
-                break;
-        }
-        var loc2;
-        switch(typeof projectListLoc[ii + 1].loc){
-            case "number":
-                loc2 = projectListLoc[ii + 1].loc;
-                break;
-            default:
-                loc2 = 0;
-                for(let iii = 0; iii < projectListLoc[ii + 1].loc.length;
-                iii++){
-                    loc2 += projectListLoc[ii + 1].loc[iii];
-                }
-                break;
-        }
-        if(loc2 > loc){
+        if(projectListLoc[ii + 1].totalLoc > projectListLoc[ii].totalLoc){
             var temp = projectListLoc[ii];
             projectListLoc[ii] = projectListLoc[ii + 1];
             projectListLoc[ii + 1] = temp;
@@ -237,35 +234,14 @@ for(let i = 0; i < projectListLoc.length - 1; i++){
     }
 }
 for(let i = 0; i < projectListLoc.length; i++){
-    var loc;
-    switch(typeof projectListLoc[i].loc){
-        case "number":
-            loc = projectListLoc[i].loc;
-            break;
-        default:
-            loc = 0;
-            for(let ii = 0; ii < projectListLoc[i].loc.length; ii++){
-                loc += projectListLoc[i].loc[ii];
-            }
-            break;
-    }
     document.getElementsByClassName("graph-bar-small")[i].style.width =
-        400 * (loc / projectListLoc[0].loc) + "px";
-    var color;
-    try{
-        if(projectListLoc[i].lang.includes(css)){
-            color = html.color;
-        }else{
-            color = javaScript.color;
-        }
-    }catch(e){
-        color = projectListLoc[i].lang.color;
-    }
+        400 * (projectListLoc[i].totalLoc / projectListLoc[0].totalLoc) +
+        "px";
     document.getElementsByClassName("graph-bar-small")[i]
-        .style.backgroundColor = color;
+        .style.backgroundColor = projectListLoc[i].color;
     document.getElementsByClassName("graph-bar-small-text")[i].innerHTML =
         (i + 1) + ". " + projectListLoc[i].name + " - " +
-        formatNum(loc);
+        formatNum(projectListLoc[i].totalLoc);
 }
 
 // Graph 5
@@ -283,41 +259,26 @@ for(let i = 0; i < 3; i++){
 
 // Project Tags
 for(let i = projectList.length - 1; i >= 0 ; i--){
-    var loc;
-    switch(typeof projectList[i].loc){
-        case "number":
-            loc = projectList[i].loc;
-            break;
-        default:
-            loc = 0;
-            for(let ii = 0; ii < projectList[i].loc.length; ii++){
-                loc += projectList[i].loc[ii];
-            }
-            break;
-    }
-    var color;
     var langName;
     try{
         if(projectList[i].lang.includes(css)){
-            color = html.color;
             langName = "JS, HTML, CSS";
         }else{
-            color = javaScript.color;
             langName = "JS & HTML";
         }
     }catch(e){
-        color = projectList[i].lang.color;
         langName = projectList[i].lang.name;
     }
-    document.getElementsByClassName("project-tag")
-        [(projectList.length - i - 1) * 2].style.backgroundColor = color;
+    document.getElementsByClassName("project-tag")[(projectList.length - i -
+        1) * 2].style.backgroundColor = projectList[i].color;
     document.getElementsByClassName("project-tag")
         [(projectList.length - i - 1) * 2 + 1].style.backgroundColor =
-        "rgb(0, " + (loc / projectListLoc[0].loc * 215 + 40) + ", 0)";
+        "rgb(0, " + (projectList[i].totalLoc / projectListLoc[0].totalLoc *
+        215 + 40) + ", 0)";
     document.getElementsByClassName("project-tag-text")
         [(projectList.length - i - 1) * 2].innerHTML = langName;
-    document.getElementsByClassName("project-tag-text")
-        [(projectList.length - i - 1) * 2 + 1].innerHTML = loc + " LoC";
+    document.getElementsByClassName("project-tag-text")[(projectList.length -
+        i - 1) * 2 + 1].innerHTML = projectList[i].totalLoc + " LoC";
 }
 
 // Website Version
