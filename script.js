@@ -259,7 +259,7 @@ for(let i = 0; i < 3; i++){
     document.getElementsByClassName("graph-bar-wide-text")[i].innerHTML =
         myWebsite.lang[i].name + " - " + formatNum(myWebsite.loc[i]) +
         " Lines of Code (" + Math.round(myWebsite.loc[i] / (myWebsite.loc[0] +
-        myWebsite.loc[1] + myWebsite.loc[2]) * 100) + ")%";
+        myWebsite.loc[1] + myWebsite.loc[2]) * 100) + "%)";
 }
 
 // Project Tags
