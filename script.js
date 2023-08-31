@@ -98,7 +98,6 @@ function toggleVersions(){
 
 // Colors
 var grey4 = "#606060";
-var grey5 = "#808080";
 var green = "#00b050";
 
 // Languages
@@ -128,14 +127,20 @@ battlefieldSimulator =
 racingGame2 = new Project("Racing Game 2", [javaScript, html], [201, 13], "");
 pong = new Project("Pong", [javaScript, html, css], [107, 26, 34], "");
 myWebsite = new Project("My Website", [javaScript, html, css],
-    [241, 521, 317], "v2.13.1");
+    [246, 574, 317], "v2.13.2");
 fakeOS = new Project("FakeOS", java, 1324, "v1.6");
 mapGen5 = new Project("MapGen 5", python, 589, "");
 worldGen = new Project("WorldGen", cSharp, 381, "v1.1");
+kingdomOfWarGlobalConquest = new Project(
+    "Kingdom of War - Global Conquest<wbr>", java, 3000, "v0.0.0");
+kingdomOfWarGlobalConquestWebsite = new Project(
+    "Kingdom of War - Global Conquest <wbr>Website",
+    [html, css], [120, 28], "v0.0.0");
 var projectList = [kingdomOfWar, kingdomOfWarMultiplayer, limeBot,
     theDevilInMe, farmBot, exorcist, mapGen4, theRandomTriviaGame,
     thirtySecondRacingGame, battlefieldSimulator, racingGame2, pong,
-    myWebsite, fakeOS, mapGen5, worldGen];
+    myWebsite, fakeOS, mapGen5, worldGen, kingdomOfWarGlobalConquest,
+    kingdomOfWarGlobalConquestWebsite];
 
 // Buttons
 var showLinks = false;
@@ -153,7 +158,7 @@ for(let i = 0; i < langList.length; i++){
         }else{
             try{
                 if(projectList[ii].lang.includes(langList[i])){
-                langList[i].totalLoc += projectList[ii].loc[
+                    langList[i].totalLoc += projectList[ii].loc[
                     projectList[ii].lang.indexOf(langList[i])];
                     langList[i].totalProjects++;
                 }
