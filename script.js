@@ -101,12 +101,12 @@ var grey4 = "#606060";
 var green = "#00b050";
 
 // Languages
-var python = new Language("Python", "#2525ff");
-var java = new Language("Java", "#ff2525");
-var cSharp = new Language("C#", "#25ff25", "cs");
-var javaScript = new Language("JavaScript", "#ffff25");
-var html = new Language("HTML", "#ff7c25");
-var css = new Language("CSS", "#922592");
+var python = new Language("Python", "#1919AC");
+var java = new Language("Java", "#AC1919");
+var cSharp = new Language("C#", "#19AC19");
+var javaScript = new Language("JavaScript", "#ACAC19");
+var html = new Language("HTML", "#AC5419");
+var css = new Language("CSS", "#621962");
 var langList = [python, java, cSharp, javaScript, html, css];
 
 // Projects
@@ -127,15 +127,15 @@ battlefieldSimulator =
 racingGame2 = new Project("Racing Game 2", [javaScript, html], [201, 13], "");
 pong = new Project("Pong", [javaScript, html, css], [107, 26, 34], "");
 myWebsite = new Project("My Website", [javaScript, html, css],
-    [246, 574, 317], "v2.13.2");
+    [246, 574, 317], "v2.14.1");
 fakeOS = new Project("FakeOS", java, 1324, "v1.6");
 mapGen5 = new Project("MapGen 5", python, 589, "");
 worldGen = new Project("WorldGen", cSharp, 381, "v1.1");
 kingdomOfWarGlobalConquest = new Project(
-    "Kingdom of War - Global Conquest<wbr>", java, 3000, "v0.0.0");
+    "Kingdom of War - Global Conquest<wbr>", java, 3002, "v0.0.1");
 kingdomOfWarGlobalConquestWebsite = new Project(
     "Kingdom of War - Global Conquest <wbr>Website",
-    [html, css], [120, 28], "v0.0.0");
+    [html, css], [120, 29], "v0.0.1");
 var projectList = [kingdomOfWar, kingdomOfWarMultiplayer, limeBot,
     theDevilInMe, farmBot, exorcist, mapGen4, theRandomTriviaGame,
     thirtySecondRacingGame, battlefieldSimulator, racingGame2, pong,
