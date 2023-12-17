@@ -127,10 +127,10 @@ battlefieldSimulator =
 racingGame2 = new Project("Racing Game 2", [javaScript, html], [201, 13], "");
 pong = new Project("Pong", [javaScript, html, css], [107, 26, 34], "");
 myWebsite = new Project("My Website", [javaScript, html, css],
-    [246, 574, 317], "v2.14.1");
+    [246, 574, 317], "v2.14.2");
 fakeOS = new Project("FakeOS", java, 1324, "v1.6");
 mapGen5 = new Project("MapGen 5", python, 589, "");
-worldGen = new Project("WorldGen", cSharp, 381, "v1.1");
+worldGen = new Project("WorldGen", cSharp, 385, "v1.2");
 kingdomOfWarGlobalConquest = new Project(
     "Kingdom of War - Global Conquest<wbr>", java, 3002, "v0.0.1");
 kingdomOfWarGlobalConquestWebsite = new Project(
